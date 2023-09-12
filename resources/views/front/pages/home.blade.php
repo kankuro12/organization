@@ -133,28 +133,6 @@
         </div>
     </div>
 
-    <div id="homenews">
-        <div class="container">
+    @includeIf('front.cache.home.news')
 
-            <div class="title">News & articles</div>
-            <div class="subtitle">latest news and articles</div>
-            <div class="news">
-                <div class="row">
-                    @for ($i = 0; $i < 3; $i++)
-                    <div class="col-md-4">
-                        <a class="news-single">
-                            <div class="img"><img src="https://layerdrops.com/oxpinshtml/main-html/assets/images/blog/news-1-1.jpg" alt=""></div>
-                           <div class="titleholder">
-                                <div class="date">23 May, 2022</div>
-                                <div class="newstitle">
-                                    How does the malnutrition affect children?
-                                </div>
-                           </div>
-                        </a>
-                    </div>
-                    @endfor
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection

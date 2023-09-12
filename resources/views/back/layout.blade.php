@@ -49,7 +49,7 @@
 
     <div class="row m-0">
         <div class="col-md-2">
-
+            @include('back.sidebar')
         </div>
         <div class="col-md-10 pt-3 ">
             <div class="d-flex shadow align-items-center py-3 px-2 justify-content-between">
@@ -105,7 +105,9 @@
             $('.dropify').dropify();
             showToastr();
         });
-    </script>
+
+        </script>
+        @yield('js')
 
 </body>
 

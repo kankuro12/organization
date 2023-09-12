@@ -3,12 +3,16 @@
     <div class="notices mb-4">
         @foreach ($notices as $notice)
 
-        @endforeach
-        <a class="single-notice" href="dd">
-            <span class="date">25th, Jan</span>
-            <div class="notice-title">Helping each other can make world better</div>
+        <a class="single-notice" href="{{asset($notice->file)}}" target="_blank">
+            <span class="date">
+                {{noticeDate($notice)}}
+            </span>
+            <div class="notice-title">
+                {{$notice->title}}
+            </div>
 
         </a>
+        @endforeach
 
     </div>
     <div class="text-center">

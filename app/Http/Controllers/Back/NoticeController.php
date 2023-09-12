@@ -25,14 +25,42 @@ class NoticeController extends Controller
             $notice->desc=$request->desc;
             $notice->type=$type;
             $notice->save();
-            return redirect()->back()->with('Notice added successfully');
+            $this->render($type);
+            return redirect()->back()->with(noticeType($type).' added successfully');
         }
     }
 
-    function render($type){
-        if($type==1){
-            $notices=DB::table('notices')->orderBy('created_at','desc')->take(4)->get();
-            file_put_contents(resource_path('views/front/cache/home/notices.blade.php'),view('back.notice.template.notice',compact('notices'))->render());
+    public function edit(Request $request,Notice $notice){
+        if(isGet()){
+            return view('back.notice.edit',compact('notice'));
+        }else{
+            $notice=new Notice();
+            $notice->title=$request->title;
+            $notice->file=$request->file->store('uploads/image');
+            $notice->short_desc=$request->short_desc;
+            $notice->desc=$request->desc;
+            $notice->save();
+            $this->render($notice->type);
+            return redirect()->back()->with(noticeType($notice->type) .' updated successfully');
         }
+    }
+
+    public function render($type){
+        if($type==1){
+            $notices=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->take(4)->get();
+            file_put_contents(resource_path('views/front/cache/home/notices.blade.php'),view('back.notice.template.notice',compact('notices'))->render());
+        }elseif($type==2){
+            $allnews=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->take(3)->get();
+            file_put_contents(resource_path('views/front/cache/home/news.blade.php'),view('back.notice.template.news',compact('allnews'))->render());
+        }
+    }
+
+    public function image($type,Request $request){
+
+        return response()->json(
+            [
+                'success'=> true, // Must be false if upload fails
+                'file'=>asset($request->fileToUpload->store('uploads/image/'.(noticeType($type))))
+            ]);
     }
 }

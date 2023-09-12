@@ -18,9 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/news', [HomeController::class,'news'])->name('news');
+Route::get('/news/{slug}', [HomeController::class,'newsSingle'])->name('news.single');
 
 
 Route::prefix('admin')->name('admin.')->group(function(){
+
     Route::prefix('slider')->name('slider.')->group(function(){
         Route::get('',[SliderController::class,'index'])->name('index');
         Route::match(['GET','POST'],'add',[SliderController::class,'add'])->name('add');
@@ -33,6 +36,9 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::match(['GET','POST'],'add/{type}',[NoticeController::class,'add'])->name('add');
         Route::match(['GET','POST'],'edit/{notice}',[NoticeController::class,'edit'])->name('edit');
         Route::get('del/{notice}',[NoticeController::class,'del'])->name('del');
+        Route::get('render/{type}',[NoticeController::class,'render'])->name('render');
+        Route::post('image/{type}',[NoticeController::class,'image'])->name('image');
+
     });
 
     Route::prefix('setting')->name('setting.')->group(function(){

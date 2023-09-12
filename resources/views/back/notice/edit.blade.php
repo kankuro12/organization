@@ -1,51 +1,51 @@
 @extends('back.layout')
 @section('head-title')
-    <a href="{{ route('admin.notice.index', ['type' => $type]) }}">{{ noticeType($type) }}</a>
-    <a href="#">Add</a>
+    <a href="{{ route('admin.notice.index', ['type' => $notice->type]) }}">{{ noticeType($notice->type) }}</a>
+    <a href="#">Edit</a>
 @endsection
 @section('toolbar')
 @endsection
 @section('content')
     <div class="mt-3 p-3 shadow">
-        <form action="{{ route('admin.notice.add', ['type' => $type]) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.notice.edit', ['notice' => $notice->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-2">
                 <label for="title">Title</label>
-                <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                <input type="text" name="title" class="form-control" placeholder="Enter Title" value="{{$notice->title}}">
             </div>
             <div class="mb-2">
                 <label for="file">
-                    @if ($type == 1)
+                    @if ($notice->type == 1)
                         Download File
                     @else
                         Image
                     @endif
                 </label>
-                <input type="file" name="file" class="form-control dropify" placeholder="Select File" required
-                    @if ($type != 1) accept="image/*" @endif>
+                <input type="file" name="file" class="form-control dropify" placeholder="Select File" data-default-file="{{asset($notice->file)}}"
+                    @if ($notice->type != 1) accept="image/*" @endif>
 
             </div>
-            @if ($type != 1 && $type != 2)
+            @if ($notice->type != 1 && $notice->type != 2)
                 <div class="mb-2">
                     <label for="short_desc">Short Description</label>
-                    <textarea type="text" name="short_desc" class="form-control" placeholder="Enter short description" required></textarea>
+                    <textarea type="text" name="short_desc" class="form-control" placeholder="Enter short description" required>{{$notice->short_desc}}</textarea>
                 </div>
             @endif
 
-            @if ($type == 2)
+            @if ($notice->type == 2)
                 <div class="mb-2">
                     <label for="desc">
-                        @if ($type == 2)
+                        @if ($notice->type == 2)
                             Full News
                         @endif
                     </label>
-                    <textarea type="text" name="desc" id="desc" class="form-control" required></textarea>
+                    <textarea type="text" name="desc" id="desc" class="form-control" required>{{$notice->desc}}</textarea>
                 </div>
             @endif
 
             <div>
                 <button class="btn btn-primary">
-                    Save {{ noticeType($type) }}
+                    Update {{ noticeType($notice->type) }}
                 </button>
             </div>
 
@@ -53,7 +53,7 @@
     </div>
 @endsection
 @section('js')
-    @if ($type == 2)
+    @if ($notice->type == 2)
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/ui/trumbowyg.min.css"
             integrity="sha512-Fm8kRNVGCBZn0sPmwJbVXlqfJmPC13zRsMElZenX6v721g/H7OukJd8XzDEBRQ2FSATK8xNF9UYvzsCtUpfeJg=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -86,7 +86,7 @@
 
                     plugins: {
                         upload: {
-                            serverPath: "{{route('admin.notice.image',['type'=>$type])}}",
+                            serverPath: "{{route('admin.notice.image',['type'=>$notice->type])}}",
                             imageWidthModalEdit: true,
                             data: [{name:"_token",value:"{{csrf_token()}}"}],
                         }

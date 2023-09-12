@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
@@ -51,4 +52,9 @@ function isGet() {
 
 function noticeType($type){
     return ['','Notice','News','Issue'][$type];
+}
+
+function noticeDate($notice){
+    return Carbon::parse($notice->created_at)->format('d M, Y');
+
 }
