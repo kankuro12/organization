@@ -1,0 +1,96 @@
+.navbar{
+    background-color: var(--org-white);
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    z-index: 99;
+    box-shadow: 0px 0px 1px 0px #d4d4d4;
+    .logo{
+        margin-left: 50px;
+        img{
+            max-height: 75px;
+        }
+    }
+
+    .navbar-top{
+        display: flex;
+        a{
+            margin-left: 20px;
+            text-decoration: none;
+        }
+        .top-link{
+            display: flex;
+            align-items: center;
+            .top-icon{
+                position: relative;
+                display: inline-block;
+                font-size: 30px;
+                color: var(--org-base);
+                margin-right:10px;
+            }
+            .top-title{
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 16px;
+                color: var(--org-gray);
+                font-family: var(--org-font);
+
+            }
+            .top-info{
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+                font-family: var(--org-font);
+                color: var(--org-black);
+            }
+        }
+        .member{
+            color: var(--org-black);
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--org-black);
+            font-family: var(--org-font-three);
+        }
+    }
+    .navbar-bottom{
+        padding-left: 50px;
+        margin-top: 10px;
+        background-color: var(--org-base);
+        display: flex;
+        border-top-left-radius: 20px;
+        overflow: hidden;
+        align-items: center;
+        justify-content: flex-end;
+        text-transform: uppercase;
+        .link{
+            text-decoration: none;
+            color: var(--org-nav);
+            font-weight: 500;
+            font-size: 15px;
+            padding-right: 50px;
+            transition: all 1s;
+            &:hover{
+                color: var(--org-white);
+            }
+        }
+        #donate{
+            height: 70px;
+            color: var(--org-black);
+            background-color: var(--org-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 250px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            font-family: var(--org-font);
+
+        }
+    }
+}
+
+
