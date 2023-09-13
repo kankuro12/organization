@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Back\NoticeController;
 use App\Http\Controllers\Back\SliderController;
+use App\Http\Controllers\Back\TeamController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,13 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('render/{type}',[NoticeController::class,'render'])->name('render');
         Route::post('image/{type}',[NoticeController::class,'image'])->name('image');
 
+    });
+
+    Route::prefix('team')->name('team.')->group(function(){
+        Route::get('index/{notice}',[TeamController::class,'index'])->name('index');
+        Route::match(['GET','POST'],'add/{notice}',[TeamController::class,'add'])->name('add');
+        Route::match(['GET','POST'],'edit/{team}',[TeamController::class,'edit'])->name('edit');
+        Route::get('del/{team}',[TeamController::class,'del'])->name('del');
     });
 
     Route::prefix('setting')->name('setting.')->group(function(){

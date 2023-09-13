@@ -20,7 +20,12 @@ class NoticeController extends Controller
         }else{
             $notice=new Notice();
             $notice->title=$request->title;
-            $notice->file=$request->file->store('uploads/image');
+            if($request->hasFile('file')){
+
+                $notice->file=$request->file->store('uploads/image');
+            }else{
+                $notice->file="";
+            }
             $notice->short_desc=$request->short_desc;
             $notice->desc=$request->desc;
             $notice->type=$type;
@@ -36,7 +41,9 @@ class NoticeController extends Controller
         }else{
             $notice=new Notice();
             $notice->title=$request->title;
-            $notice->file=$request->file->store('uploads/image');
+            if($request->hasFile('file')){
+                $notice->file=$request->file->store('uploads/image');
+            }
             $notice->short_desc=$request->short_desc;
             $notice->desc=$request->desc;
             $notice->save();

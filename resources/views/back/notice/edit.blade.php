@@ -13,6 +13,8 @@
                 <label for="title">Title</label>
                 <input type="text" name="title" class="form-control" placeholder="Enter Title" value="{{$notice->title}}">
             </div>
+            @if ($notice->type!=4)
+
             <div class="mb-2">
                 <label for="file">
                     @if ($notice->type == 1)
@@ -25,6 +27,7 @@
                     @if ($notice->type != 1) accept="image/*" @endif>
 
             </div>
+            @endif
             @if ($notice->type != 1 && $notice->type != 2)
                 <div class="mb-2">
                     <label for="short_desc">Short Description</label>

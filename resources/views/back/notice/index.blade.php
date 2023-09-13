@@ -36,8 +36,11 @@
                     </td>
                     @endif
                     <td>
-                        <a href="{{route('admin.notice.edit',['notice'=>$notice->id])}}" class="btn btn-primary">Edit</a>
-                        <a href="{{route('admin.notice.del',['notice'=>$notice->id])}}" class="btn btn-danger" onclick="return confirm('Delete {{noticeType($type)}}')"> Delete</a>
+                        <a href="{{route('admin.notice.edit',['notice'=>$notice->id])}}" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="{{route('admin.notice.del',['notice'=>$notice->id])}}" class="btn btn-sm btn-danger" onclick="return confirm('Delete {{noticeType($type)}}')"> Delete</a>
+                        @if ($type==4)
+                            <a href="{{route('admin.team.index',['notice'=>$notice->id])}}" class="btn btn-sm btn-primary" >Members</a>
+                        @endif
                     </td>
 
                 </tr>

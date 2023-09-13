@@ -13,6 +13,7 @@
                 <label for="title">Title</label>
                 <input type="text" name="title" class="form-control" placeholder="Enter Title">
             </div>
+            @if ($type!=4)
             <div class="mb-2">
                 <label for="file">
                     @if ($type == 1)
@@ -25,6 +26,7 @@
                     @if ($type != 1) accept="image/*" @endif>
 
             </div>
+            @endif
             @if ($type != 1 && $type != 2)
                 <div class="mb-2">
                     <label for="short_desc">Short Description</label>
