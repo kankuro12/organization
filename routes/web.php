@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/news', [HomeController::class,'news'])->name('news');
+Route::get('/gallery', [HomeController::class,'gallery'])->name('gallery');
+Route::get('/gallery/{slug}', [HomeController::class,'gallerySingle'])->name('gallery.single');
 Route::get('/news/{slug}', [HomeController::class,'newsSingle'])->name('news.single');
 
 

@@ -38,3 +38,28 @@ body{
 .font-two{
     font-family: var(--org-font-two);
 }
+
+
+.jumbotron{
+    background: var(--org-gray);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--org-white);
+
+    a{
+        text-decoration: none;
+        color: var(--org-white);
+
+        &.active{
+            color: var(--org-primary);
+
+        }
+        &:hover{
+            color: var(--org-primary);
+        }
+    }
+}

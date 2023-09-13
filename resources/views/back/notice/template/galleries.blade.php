@@ -1,7 +1,7 @@
 <div class="galleries">
     <div class="container">
         <div class="row m-0">
-            @foreach ($galleries->take(4) as $gallery)
+            @foreach ($galleries as $gallery)
 
                 <div class="col-md-3 p-2">
                     <a class="gallery-single" href="{{route('gallery.single',['slug'=>$gallery->slug])}}">

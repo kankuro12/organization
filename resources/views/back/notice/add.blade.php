@@ -10,10 +10,16 @@
         <form action="{{ route('admin.notice.add', ['type' => $type]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-2">
-                <label for="title">Title</label>
-                <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                <label for="title">
+                    @if($type==6)
+                    Question
+                    @else
+                    Title
+                    @endif
+                </label>
+                <input type="text" name="title" class="form-control" data="Enter Title">
             </div>
-            @if ($type!=4)
+            @if ($type!=4 &&  $type!=6)
             <div class="mb-2">
                 <label for="file">
                     @if ($type == 1)
@@ -22,15 +28,21 @@
                         Image
                     @endif
                 </label>
-                <input type="file" name="file" class="form-control dropify" placeholder="Select File" required
+                <input type="file" name="file" class="form-control dropify" data="Select File" required
                     @if ($type != 1) accept="image/*" @endif>
 
             </div>
             @endif
             @if ($type != 1 && $type != 2)
                 <div class="mb-2">
-                    <label for="short_desc">Short Description</label>
-                    <textarea type="text" name="short_desc" class="form-control" placeholder="Enter short description" required></textarea>
+                    <label for="short_desc">
+                        @if($type==6)
+                        Answer
+                        @else
+                        Short Description
+                        @endif
+                    </label>
+                    <textarea type="text" name="short_desc" class="form-control" data="Enter short description" required></textarea>
                 </div>
             @endif
 

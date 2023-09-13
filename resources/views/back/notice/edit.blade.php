@@ -10,10 +10,16 @@
         <form action="{{ route('admin.notice.edit', ['notice' => $notice->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-2">
-                <label for="title">Title</label>
-                <input type="text" name="title" class="form-control" placeholder="Enter Title" value="{{$notice->title}}">
+                <label for="title">
+                    @if($notice->type==6)
+                    Question
+                    @else
+                    Title
+                    @endif
+                </label>
+                <input type="text" name="title" class="form-control" data="Enter Title" value="{{$notice->title}}">
             </div>
-            @if ($notice->type!=4)
+            @if ($notice->type!=4  &&  $notice->type!=6)
 
             <div class="mb-2">
                 <label for="file">
@@ -23,15 +29,21 @@
                         Image
                     @endif
                 </label>
-                <input type="file" name="file" class="form-control dropify" placeholder="Select File" data-default-file="{{asset($notice->file)}}"
+                <input type="file" name="file" class="form-control dropify" data="Select File" data-default-file="{{asset($notice->file)}}"
                     @if ($notice->type != 1) accept="image/*" @endif>
 
             </div>
             @endif
-            @if ($notice->type != 1 && $notice->type != 2)
+            @if ($notice->type != 1 && $notice->type != 2 )
                 <div class="mb-2">
-                    <label for="short_desc">Short Description</label>
-                    <textarea type="text" name="short_desc" class="form-control" placeholder="Enter short description" required>{{$notice->short_desc}}</textarea>
+                    <label for="short_desc">
+                        @if($notice->type==6)
+                        Answer
+                        @else
+                        Short Description
+                        @endif
+                    </label>
+                    <textarea type="text" name="short_desc" class="form-control" data="Enter short description" required>{{$notice->short_desc}}</textarea>
                 </div>
             @endif
 

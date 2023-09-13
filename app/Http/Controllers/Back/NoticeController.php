@@ -39,7 +39,6 @@ class NoticeController extends Controller
         if(isGet()){
             return view('back.notice.edit',compact('notice'));
         }else{
-            $notice=new Notice();
             $notice->title=$request->title;
             if($request->hasFile('file')){
                 $notice->file=$request->file->store('uploads/image');
@@ -47,6 +46,7 @@ class NoticeController extends Controller
             $notice->short_desc=$request->short_desc;
             $notice->desc=$request->desc;
             $notice->save();
+
             $this->render($notice->type);
             return redirect()->back()->with('message',noticeType($notice->type) .' updated successfully');
         }
@@ -57,11 +57,16 @@ class NoticeController extends Controller
             $notices=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->take(4)->get();
             file_put_contents(resource_path('views/front/cache/home/notices.blade.php'),view('back.notice.template.notice',compact('notices'))->render());
         }elseif($type==2){
+            clearNewMini();
             $allnews=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->take(3)->get();
             file_put_contents(resource_path('views/front/cache/home/news.blade.php'),view('back.notice.template.news',compact('allnews'))->render());
         }elseif($type==5){
-            $galleries=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->take(3)->get();
+            $galleries=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->get();
             file_put_contents(resource_path('views/front/cache/home/galleries.blade.php'),view('back.notice.template.homegalleries',compact('galleries'))->render());
+            file_put_contents(resource_path('views/front/cache/page/galleries.blade.php'),view('back.notice.template.galleries',compact('galleries'))->render());
+        }elseif($type==6){
+            $faqs=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->take(4)->get();
+            file_put_contents(resource_path('views/front/cache/home/faq.blade.php'),view('back.notice.template.homefaq',compact('faqs'))->render());
         }
     }
 

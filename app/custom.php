@@ -51,10 +51,30 @@ function isGet() {
 
 
 function noticeType($type){
-    return ['','Notice','News','Issue','Teams','Gallery'][$type];
+    return ['','Notice','News','Issue','Teams','Gallery','FAQ'][$type];
 }
 
 function noticeDate($notice){
     return Carbon::parse($notice->created_at)->format('d M, Y');
 
+}
+
+
+function clearNewMini(){
+     Cache::forget('news_mini');
+}
+
+function newsMini(){
+    return Cache::rememberForever('news_mini',function(){
+        return DB::table('notices')->where('type',2)->get(['id','slug as s','title as t','file as f','created_at'])
+        ->map((function($news){
+            return (object)[
+                'id'=>$news->id,
+                's'=>$news->s,
+                't'=>$news->t,
+                'f'=>asset($news->f),
+                'date'=>noticeDate($news),
+            ];
+        }));
+    });
 }
