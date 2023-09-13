@@ -52,24 +52,7 @@
                 Our photo gallery
             </h4>
         </div>
-        <div class="galleries">
-            <div class="container">
-                <div class="row m-0">
-                    @for ($i = 0; $i < 20; $i++)
-                        <div class="col-md-3 p-2">
-                            <a class="gallery-single" href="gallery">
-                                <div class="img">
-                                    <img src="https://v.greattibettour.com/photos/2021/09/tihar-festival-09-09462.jpg" alt="">
-                                </div>
-                                <div class="overlay">
-                                    info
-                                </div>
-                            </a>
-                        </div>
-                    @endfor
-                </div>
-            </div>
-        </div>
+        @includeIf('front.cache.home.galleries')
     </div>
 
     <div id="homefaq">

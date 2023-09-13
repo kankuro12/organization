@@ -161,6 +161,7 @@ body {
 
 #homenotices {
   font-family: var(--org-font);
+  margin-bottom: 50px;
 }
 #homenotices .title {
   font-weight: 700;
@@ -466,6 +467,7 @@ body {
 }
 
 .galleries .gallery-single {
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
   display: block;
   border-radius: 10px;
   overflow: hidden;

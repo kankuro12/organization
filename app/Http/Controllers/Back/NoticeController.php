@@ -31,7 +31,7 @@ class NoticeController extends Controller
             $notice->type=$type;
             $notice->save();
             $this->render($type);
-            return redirect()->back()->with(noticeType($type).' added successfully');
+            return redirect()->back()->with('message',noticeType($type).' added successfully');
         }
     }
 
@@ -48,7 +48,7 @@ class NoticeController extends Controller
             $notice->desc=$request->desc;
             $notice->save();
             $this->render($notice->type);
-            return redirect()->back()->with(noticeType($notice->type) .' updated successfully');
+            return redirect()->back()->with('message',noticeType($notice->type) .' updated successfully');
         }
     }
 
@@ -59,6 +59,9 @@ class NoticeController extends Controller
         }elseif($type==2){
             $allnews=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->take(3)->get();
             file_put_contents(resource_path('views/front/cache/home/news.blade.php'),view('back.notice.template.news',compact('allnews'))->render());
+        }elseif($type==5){
+            $galleries=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->take(3)->get();
+            file_put_contents(resource_path('views/front/cache/home/galleries.blade.php'),view('back.notice.template.homegalleries',compact('galleries'))->render());
         }
     }
 

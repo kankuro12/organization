@@ -31,6 +31,7 @@ class TeamController extends Controller
             $team->email=$request->email??"";
             $team->image=$request->image->store('uploads/members');
             $team->save();
+            $this->render();
             return redirect()->back()->with('message','member added successfully');
         }
     }
@@ -48,6 +49,8 @@ class TeamController extends Controller
                 $team->image=$request->image->store('uploads/members');
             }
             $team->save();
+            $this->render();
+
             return redirect()->back()->with('message','member updated successfully');
         }
     }
@@ -56,8 +59,15 @@ class TeamController extends Controller
 
 
             $team->delete();
+            $this->render();
             return redirect()->back()->with('message','member deleted successfully');
 
+    }
+
+    public function render(){
+        $notice=Notice::where('type',4)->first();
+        $teams=Team::where('notice_id',$notice->id)->take(4)->get();
+        file_put_contents(resource_path('views/front/cache/home/members.blade.php'),view('back.notice.template.homemembers',compact('notice','teams'))->render());
     }
 
 }

@@ -3,7 +3,7 @@
     <a href="#">{{noticeType($type)}}</a>
 @endsection
 @section('toolbar')
-    <a href="{{route('admin.notice.add',['type'=>$type])}}" class="btn btn-sm btn-primary">{{noticeType($type)}}</a>
+    <a href="{{route('admin.notice.add',['type'=>$type])}}" class="btn btn-sm btn-primary">New {{noticeType($type)}}</a>
 @endsection
 @section('content')
 <div class="shadow p-3 mt-3">
@@ -13,7 +13,7 @@
                 <th>
                     Title
                 </th>
-                @if ($type==2)
+                @if ($type==2 || $type==5)
                 <th>
                     Image
                 </th>
@@ -30,7 +30,7 @@
                     <td>
                         {{$notice->title}}
                     </td>
-                    @if ($type==2)
+                    @if ($type==2 || $type==5)
                     <td>
                         <img style="max-height: 50px;" src="{{asset($notice->file)}}" alt="">
                     </td>

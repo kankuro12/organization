@@ -51,7 +51,7 @@ function isGet() {
 
 
 function noticeType($type){
-    return ['','Notice','News','Issue','Teams'][$type];
+    return ['','Notice','News','Issue','Teams','Gallery'][$type];
 }
 
 function noticeDate($notice){
