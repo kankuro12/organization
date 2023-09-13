@@ -61,12 +61,12 @@
         <div class="navbar-bottom">
             <a href="/" class="link">Home</a>
             <a href="{{route('notices')}}" class="link">Notices</a>
-            <a href="" class="link">Comities</a>
+            <a href="{{route('committees')}}" class="link">Committees</a>
             <a href="{{route('news')}}" class="link">News</a>
             <a href="" class="link">Issues</a>
             <a href="{{route('gallery')}}" class="link">Gallery</a>
             <a href="" class="link">Resources</a>
-            <a href="" class="link">Help</a>
+            <a href="{{route('faq')}}" class="link">Help</a>
             <a href="" class="link">Contact</a>
             <a href="" id="donate">
                 Donate Now

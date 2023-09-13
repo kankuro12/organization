@@ -43,4 +43,16 @@ class HomeController extends Controller
         // return view('front.gall')
 
     }
+
+    public function faq() {
+        $faqs=getFAQ();
+        return view('front.pages.faq',compact('faqs'));
+    }
+
+    public function committees(){
+        $committees=getComities();
+        return view('front.pages.comities',compact('committees'));
+
+
+    }
 }

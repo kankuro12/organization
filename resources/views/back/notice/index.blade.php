@@ -40,6 +40,9 @@
                         <a href="{{route('admin.notice.del',['notice'=>$notice->id])}}" class="btn btn-sm btn-danger" onclick="return confirm('Delete {{noticeType($type)}}')"> Delete</a>
                         @if ($type==4)
                             <a href="{{route('admin.team.index',['notice'=>$notice->id])}}" class="btn btn-sm btn-primary" >Members</a>
+                            @if ($notice->is_main==0)
+                                <a href="{{route('admin.team.setmain',['id'=>$notice->id])}}" class="btn btn-sm btn-primary" >Set Main</a>
+                            @endif
                         @endif
                         @if ($type==5)
                             <a href="{{route('admin.gallery.index',['notice'=>$notice->id])}}" class="btn btn-sm btn-primary" >Manage Images</a>

@@ -89,6 +89,36 @@ function delGallery($id){
     return Cache::forget('gallery_'.$id);
 }
 
+function getFAQ(){
+    return Cache::rememberForever('faq',function(){
+        return DB::table('notices')->where('type',6)->get(['title','short_desc']);
+    });
+}
+
+function delFAQ(){
+    return Cache::forget('faq');
+}
+
+function getComities(){
+    return Cache::rememberForever('comities',function(){
+        return DB::table('notices')->where('type',4)->get(['id','title','short_desc','is_main','slug']);
+    });
+}
+
+function delComities(){
+    Cache::forget('comities');
+}
+
+function getMember($notice_id){
+    return Cache::rememberForever('member_'.$notice_id,function()use($notice_id){
+        return DB::table('teams')->where('notice_id',$notice_id)->orderBy('pos','asc')->get();
+    });
+}
+
+function delMember($notice_id){
+    return Cache::forget('member_'.$notice_id);
+
+}
 
 function createThumbnail($sourceFilePath, $destinationDirectory, $maxWidth = 150, $maxHeight = 150)
 {
@@ -161,10 +191,4 @@ function createThumbnail($sourceFilePath, $destinationDirectory, $maxWidth = 150
 
     return $retpath;
 }
-
-// Example usage:
-$sourceFilePath = 'path_to_original_image.jpg'; // or 'path_to_original_image.png' or 'path_to_original_image.gif' or 'path_to_original_image.webp'
-$destinationDirectory = 'thumbnails'; // Specify the destination directory
-createThumbnail($sourceFilePath, $destinationDirectory);
-
 

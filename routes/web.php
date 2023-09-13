@@ -23,8 +23,12 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/news', [HomeController::class,'news'])->name('news');
 Route::get('/notices', [HomeController::class,'notices'])->name('notices');
 Route::get('/gallery', [HomeController::class,'gallery'])->name('gallery');
+Route::get('/faq', [HomeController::class,'faq'])->name('faq');
+Route::get('/committees', [HomeController::class,'committees'])->name('committees');
+
 Route::get('/gallery/{slug}', [HomeController::class,'gallerySingle'])->name('gallery.single');
 Route::get('/news/{slug}', [HomeController::class,'newsSingle'])->name('news.single');
+Route::get('/committees/{slug}', [HomeController::class,'committeeSingle'])->name('committee.single');
 
 
 Route::prefix('admin')->name('admin.')->group(function(){
@@ -51,6 +55,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::match(['GET','POST'],'add/{notice}',[TeamController::class,'add'])->name('add');
         Route::match(['GET','POST'],'edit/{team}',[TeamController::class,'edit'])->name('edit');
         Route::get('del/{team}',[TeamController::class,'del'])->name('del');
+        Route::get('setmain/{id}',[TeamController::class,'setMain'])->name('setmain');
     });
 
     Route::prefix('gallery')->name('gallery.')->group(function(){

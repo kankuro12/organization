@@ -29,6 +29,8 @@ class NoticeController extends Controller
             $notice->short_desc=$request->short_desc;
             $notice->desc=$request->desc;
             $notice->type=$type;
+            $notice->is_main=$request->filled('is_main');
+
             $notice->save();
             $this->render($type);
             return redirect()->back()->with('message',noticeType($type).' added successfully');
@@ -45,6 +47,7 @@ class NoticeController extends Controller
             }
             $notice->short_desc=$request->short_desc;
             $notice->desc=$request->desc;
+            $notice->is_main=$request->filled('is_main');
             $notice->save();
 
             $this->render($notice->type);
@@ -53,6 +56,7 @@ class NoticeController extends Controller
     }
 
     public function render($type){
+
         if($type==1){
             $notices=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->take(4)->get();
             file_put_contents(resource_path('views/front/cache/home/notices.blade.php'),view('back.notice.template.notice',compact('notices'))->render());
@@ -65,8 +69,11 @@ class NoticeController extends Controller
             file_put_contents(resource_path('views/front/cache/home/galleries.blade.php'),view('back.notice.template.homegalleries',compact('galleries'))->render());
             file_put_contents(resource_path('views/front/cache/page/galleries.blade.php'),view('back.notice.template.galleries',compact('galleries'))->render());
         }elseif($type==6){
+            delFAQ();
             $faqs=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->take(4)->get();
             file_put_contents(resource_path('views/front/cache/home/faq.blade.php'),view('back.notice.template.homefaq',compact('faqs'))->render());
+        }elseif($type==4){
+            delComities();
         }
     }
 

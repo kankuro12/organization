@@ -32,6 +32,8 @@ class TeamController extends Controller
             $team->image=$request->image->store('uploads/members');
             $team->save();
             $this->render();
+            delMember($team->notice_id);
+
             return redirect()->back()->with('message','member added successfully');
         }
     }
@@ -50,6 +52,7 @@ class TeamController extends Controller
             }
             $team->save();
             $this->render();
+            delMember($team->notice_id);
 
             return redirect()->back()->with('message','member updated successfully');
         }
@@ -57,7 +60,7 @@ class TeamController extends Controller
 
     public function del(Request $request,Team $team){
 
-
+            delMember($team->notice_id);
             $team->delete();
             $this->render();
             return redirect()->back()->with('message','member deleted successfully');
@@ -65,9 +68,19 @@ class TeamController extends Controller
     }
 
     public function render(){
-        $notice=Notice::where('type',4)->first();
-        $teams=Team::where('notice_id',$notice->id)->take(4)->get();
-        file_put_contents(resource_path('views/front/cache/home/members.blade.php'),view('back.notice.template.homemembers',compact('notice','teams'))->render());
+        $notice=Notice::where('type',4)->where('is_main',1)->first();
+        if($notice!=null){
+            $teams=Team::where('notice_id',$notice->id)->take(4)->get();
+            file_put_contents(resource_path('views/front/cache/home/members.blade.php'),view('back.notice.template.homemembers',compact('notice','teams'))->render());
+        }
+    }
+
+    public function setMain($id){
+        Notice::where('type',4)->update(['is_main'=>0]);
+        Notice::where('type',4)->where('id',$id)->update(['is_main'=>1]);
+        $this->render();
+
+        return redirect()->back();
     }
 
 }

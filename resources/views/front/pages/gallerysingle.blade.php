@@ -20,7 +20,7 @@
                 @foreach ($images as $image)
                     <div class="col-md-2 col-6 p-1">
                         <div class="image">
-                            <img src="{{asset($image->thumb)}}" loading="lazy" alt="">
+                            <img src="{{asset($image->thumb)}}" loading="lazy" alt="" href="{{asset($image->file)}}" data-fancybox="gallery" data-caption="image">
                         </div>
                     </div>
                 @endforeach
@@ -30,8 +30,9 @@
 
 @endsection
 @section('js')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
 <script>
     $(document).ready(function () {
 
