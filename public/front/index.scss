@@ -56,10 +56,38 @@ body{
 
         &.active{
             color: var(--org-primary);
-
         }
         &:hover{
             color: var(--org-primary);
+        }
+    }
+}
+
+#newspagination{
+
+    .pagination{
+        .page-link{
+            margin:5px;
+            border-radius: 50% !important;
+            font-weight: 600 !important;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            cursor: pointer;
+            &.page{
+                color: var(--org-black);
+                &:hover{
+                    border: 1px solid var(--org-primary);
+                    color:var(--org-primary)
+                }
+                &.active{
+                    border: 1px solid var(--org-primary);
+                    color: var(--org-primary);
+                }
+            }
         }
     }
 }

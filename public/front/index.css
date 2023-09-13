@@ -466,6 +466,75 @@ body {
   color: var(--org-base);
 }
 
+#news-page-single .image {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-bottom: 20px;
+}
+#news-page-single .image .date {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  background-color: var(--org-primary);
+  padding: 6px 25px 6px;
+  border-radius: 15px;
+  z-index: 2;
+  font-size: 18px;
+  color: var(--org-black);
+  font-family: var(--org-font-three);
+  font-weight: 700;
+  line-height: 18px;
+}
+#news-page-single .title {
+  font-size: 30px;
+  line-height: 40px;
+  margin-bottom: 10px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--org-black);
+  font-family: var(--org-font-two);
+  margin: 0;
+}
+#news-page-single .full {
+  padding-top: 30px;
+  font-size: 16px;
+  overflow: hidden;
+}
+#news-page-single .full img {
+  max-width: 100%;
+}
+#news-page-single .extra {
+  background-color: var(--org-extra);
+  border-radius: 20px;
+  padding: 20px;
+}
+#news-page-single .extra .extra-title {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--org-black);
+  font-family: var(--org-font-two);
+  margin: 0;
+}
+#news-page-single .extra .extra-single {
+  text-decoration: none;
+  color: var(--org-black);
+  padding-top: 10px;
+  display: block;
+  font-weight: 600;
+}
+#news-page-single .extra .extra-single small {
+  font-size: 0.6rem;
+  color: var(--org-base);
+}
+#news-page-single .extra .extra-single:hover {
+  color: var(--org-primary);
+}
+
 .galleries .gallery-single {
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
   display: block;
@@ -592,5 +661,29 @@ body {
   color: var(--org-primary);
 }
 .jumbotron a:hover {
+  color: var(--org-primary);
+}
+
+#newspagination .pagination .page-link {
+  margin: 5px;
+  border-radius: 50% !important;
+  font-weight: 600 !important;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  cursor: pointer;
+}
+#newspagination .pagination .page-link.page {
+  color: var(--org-black);
+}
+#newspagination .pagination .page-link.page:hover {
+  border: 1px solid var(--org-primary);
+  color: var(--org-primary);
+}
+#newspagination .pagination .page-link.page.active {
+  border: 1px solid var(--org-primary);
   color: var(--org-primary);
 }/*# sourceMappingURL=index.css.map */

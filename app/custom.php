@@ -66,7 +66,7 @@ function clearNewMini(){
 
 function newsMini(){
     return Cache::rememberForever('news_mini',function(){
-        return DB::table('notices')->where('type',2)->get(['id','slug as s','title as t','file as f','created_at'])
+        return DB::table('notices')->where('type',2)->orderBy('id','desc')->get(['id','slug as s','title as t','file as f','created_at'])
         ->map((function($news){
             return (object)[
                 'id'=>$news->id,
