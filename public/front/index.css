@@ -535,6 +535,24 @@ body {
   color: var(--org-primary);
 }
 
+#notice-page .notice {
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--org-black);
+  font-family: var(--org-font-two);
+}
+#notice-page .notice:hover {
+  color: var(--org-primary);
+}
+#notice-page small {
+  font-family: var(--org-font-two);
+  font-size: 0.8rem;
+  color: var(--org-base);
+}
+
 .galleries .gallery-single {
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
   display: block;
@@ -581,6 +599,17 @@ body {
   top: 0px;
   bottom: 0px;
   opacity: 1;
+}
+
+#gallery-single-page .image {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#gallery-single-page .image img {
+  height: 100%;
 }
 
 .footer {
@@ -677,13 +706,13 @@ body {
   cursor: pointer;
 }
 #newspagination .pagination .page-link.page {
-  color: var(--org-black);
+  color: var(--org-black) !important;
 }
 #newspagination .pagination .page-link.page:hover {
-  border: 1px solid var(--org-primary);
-  color: var(--org-primary);
+  border: 1px solid var(--org-primary) !important;
+  color: var(--org-primary) !important;
 }
 #newspagination .pagination .page-link.page.active {
-  border: 1px solid var(--org-primary);
-  color: var(--org-primary);
+  border: 1px solid var(--org-primary) !important;
+  color: var(--org-primary) !important;
 }/*# sourceMappingURL=index.css.map */

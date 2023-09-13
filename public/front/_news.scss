@@ -130,3 +130,23 @@
         }
     }
 }
+
+#notice-page{
+    .notice{
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: var(--org-black);
+        font-family: var(--org-font-two);
+        &:hover{
+            color: var(--org-primary);
+        }
+    }
+    small{
+        font-family: var(--org-font-two);
+        font-size: 0.8rem;
+        color:var(--org-base) ;
+    }
+}

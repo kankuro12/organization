@@ -41,6 +41,9 @@
                         @if ($type==4)
                             <a href="{{route('admin.team.index',['notice'=>$notice->id])}}" class="btn btn-sm btn-primary" >Members</a>
                         @endif
+                        @if ($type==5)
+                            <a href="{{route('admin.gallery.index',['notice'=>$notice->id])}}" class="btn btn-sm btn-primary" >Manage Images</a>
+                        @endif
                     </td>
 
                 </tr>

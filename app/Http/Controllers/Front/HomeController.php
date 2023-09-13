@@ -26,4 +26,21 @@ class HomeController extends Controller
         $newsSingle=DB::table('notices')->where('slug',$slug)->first(['title','desc','file','created_at']);
         return view('front.pages.newssingle',compact('newsAll','newsSingle'));
     }
+
+    public function notices(){
+        $notices= DB::table('notices')->where('type',1)
+        ->orderBy('id','desc')
+        ->select('title','file','created_at')->paginate(10);
+
+        return view('front.pages.notice',compact('notices'));
+
+    }
+
+    public function gallerySingle($slug){
+        $gallery=DB::table('notices')->where('slug',$slug)->first(['id','title']);
+        $images=getGallery($gallery->id);
+        return view('front.pages.gallerysingle',compact('gallery','images'));
+        // return view('front.gall')
+
+    }
 }

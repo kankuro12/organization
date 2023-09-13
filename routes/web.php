@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Back\GalleryController;
 use App\Http\Controllers\Back\NoticeController;
 use App\Http\Controllers\Back\SliderController;
 use App\Http\Controllers\Back\TeamController;
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/news', [HomeController::class,'news'])->name('news');
+Route::get('/notices', [HomeController::class,'notices'])->name('notices');
 Route::get('/gallery', [HomeController::class,'gallery'])->name('gallery');
 Route::get('/gallery/{slug}', [HomeController::class,'gallerySingle'])->name('gallery.single');
 Route::get('/news/{slug}', [HomeController::class,'newsSingle'])->name('news.single');
@@ -49,6 +51,12 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::match(['GET','POST'],'add/{notice}',[TeamController::class,'add'])->name('add');
         Route::match(['GET','POST'],'edit/{team}',[TeamController::class,'edit'])->name('edit');
         Route::get('del/{team}',[TeamController::class,'del'])->name('del');
+    });
+
+    Route::prefix('gallery')->name('gallery.')->group(function(){
+        Route::get('index/{notice}',[GalleryController::class,'index'])->name('index');
+        Route::match(['GET','POST'],'add/{notice}',[GalleryController::class,'add'])->name('add');
+        Route::post('del',[GalleryController::class,'del'])->name('del');
     });
 
     Route::prefix('setting')->name('setting.')->group(function(){

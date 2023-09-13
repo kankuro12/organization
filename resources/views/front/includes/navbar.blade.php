@@ -59,12 +59,12 @@
             @endif
         </div>
         <div class="navbar-bottom">
-            <a href="" class="link">Home</a>
-            <a href="" class="link">Notices</a>
+            <a href="/" class="link">Home</a>
+            <a href="{{route('notices')}}" class="link">Notices</a>
             <a href="" class="link">Comities</a>
-            <a href="" class="link">News</a>
+            <a href="{{route('news')}}" class="link">News</a>
             <a href="" class="link">Issues</a>
-            <a href="" class="link">Gallery</a>
+            <a href="{{route('gallery')}}" class="link">Gallery</a>
             <a href="" class="link">Resources</a>
             <a href="" class="link">Help</a>
             <a href="" class="link">Contact</a>

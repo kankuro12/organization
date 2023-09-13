@@ -66,6 +66,7 @@ body{
 #newspagination{
 
     .pagination{
+
         .page-link{
             margin:5px;
             border-radius: 50% !important;
@@ -77,15 +78,16 @@ body{
             justify-content: center;
             background: white;
             cursor: pointer;
+
             &.page{
-                color: var(--org-black);
+                color: var(--org-black) !important;
                 &:hover{
-                    border: 1px solid var(--org-primary);
-                    color:var(--org-primary)
+                    border: 1px solid var(--org-primary)  !important;
+                    color:var(--org-primary)  !important;
                 }
                 &.active{
-                    border: 1px solid var(--org-primary);
-                    color: var(--org-primary);
+                    border: 1px solid var(--org-primary)  !important;
+                    color: var(--org-primary)  !important;
                 }
             }
         }
