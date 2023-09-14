@@ -25,10 +25,12 @@ Route::get('/notices', [HomeController::class,'notices'])->name('notices');
 Route::get('/gallery', [HomeController::class,'gallery'])->name('gallery');
 Route::get('/faq', [HomeController::class,'faq'])->name('faq');
 Route::get('/committees', [HomeController::class,'committees'])->name('committees');
+Route::get('/issues', [HomeController::class,'issues'])->name('issues');
 
 Route::get('/gallery/{slug}', [HomeController::class,'gallerySingle'])->name('gallery.single');
 Route::get('/news/{slug}', [HomeController::class,'newsSingle'])->name('news.single');
 Route::get('/committees/{slug}', [HomeController::class,'committeeSingle'])->name('committee.single');
+Route::get('/issues/{slug}', [HomeController::class,'issueSingle'])->name('issue.single');
 
 
 Route::prefix('admin')->name('admin.')->group(function(){

@@ -74,6 +74,11 @@ class NoticeController extends Controller
             file_put_contents(resource_path('views/front/cache/home/faq.blade.php'),view('back.notice.template.homefaq',compact('faqs'))->render());
         }elseif($type==4){
             delComities();
+        }elseif($type==7){
+            $issues=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->get();
+            file_put_contents(resource_path('views/front/cache/page/issues.blade.php'),view('back.notice.template.issues',compact('issues'))->render());
+            file_put_contents(resource_path('views/front/cache/page/issuesextra.blade.php'),view('back.notice.template.issuesextra',compact('issues'))->render());
+
         }
     }
 

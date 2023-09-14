@@ -19,7 +19,7 @@
                 </label>
                 <input type="text" name="title" class="form-control" data="Enter Title">
             </div>
-            @if ($type!=4 &&  $type!=6)
+            @if ($type!=4 &&  $type!=6 && $type!=7)
             <div class="mb-2">
                 <label for="file">
                     @if ($type == 1)
@@ -46,7 +46,7 @@
                 </div>
             @endif
 
-            @if ($type == 2)
+            @if ($type == 2 || $type==7)
                 <div class="mb-2">
                     <label for="desc">
                         @if ($type == 2)
@@ -67,7 +67,7 @@
     </div>
 @endsection
 @section('js')
-    @if ($type == 2)
+    @if ($type == 2 || $type==7)
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/ui/trumbowyg.min.css"
             integrity="sha512-Fm8kRNVGCBZn0sPmwJbVXlqfJmPC13zRsMElZenX6v721g/H7OukJd8XzDEBRQ2FSATK8xNF9UYvzsCtUpfeJg=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />

@@ -673,6 +673,37 @@ body {
   color: var(--org-base);
 }
 
+#issues-page .issue {
+  padding: 15px;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+#issues-page .issue .issue-title {
+  font-family: var(--org-font-two);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  height: 48px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+#issues-page .issue .issue-desc {
+  color: var(--org-black);
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Number of lines to display */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  line-height: 20px;
+  height: 80px;
+}
+#issues-page .issue .view-more {
+  font-weight: 600;
+}
+
 .galleries .gallery-single {
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
   display: block;

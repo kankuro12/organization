@@ -1,4 +1,4 @@
-.news-single{
+.news-single {
     cursor: pointer;
     text-decoration: none;
     padding-bottom: 15px;
@@ -6,19 +6,23 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
-    .img{
+
+    .img {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 230px;
         overflow: hidden;
-        img{
+
+        img {
             width: 100%;
         }
     }
-    .titleholder{
+
+    .titleholder {
         position: relative;
-        .date{
+
+        .date {
             position: absolute;
             left: 30px;
             top: -15px;
@@ -33,8 +37,9 @@
             font-weight: 700;
             line-height: 18px;
         }
-        .newstitle{
-            padding:30px 15px 0px 15px;
+
+        .newstitle {
+            padding: 30px 15px 0px 15px;
             color: var(--org-black);
             font-family: var(--org-font-two);
             margin: 0;
@@ -46,9 +51,9 @@
         }
     }
 
-    &:hover{
-        .titleholder{
-            .newstitle{
+    &:hover {
+        .titleholder {
+            .newstitle {
                 color: var(--org-base);
             }
         }
@@ -57,14 +62,15 @@
 
 
 
-#news-page-single{
-    .image{
+#news-page-single {
+    .image {
         border-radius: 20px;
         overflow: hidden;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
         position: relative;
-        margin-bottom:20px;
-        .date{
+        margin-bottom: 20px;
+
+        .date {
             position: absolute;
             bottom: 10%;
             left: 10%;
@@ -79,7 +85,8 @@
             line-height: 18px;
         }
     }
-    .title{
+
+    .title {
         font-size: 30px;
         line-height: 40px;
         margin-bottom: 10px;
@@ -89,20 +96,23 @@
         font-family: var(--org-font-two);
         margin: 0;
     }
-    .full{
+
+    .full {
         padding-top: 30px;
         font-size: 16px;
         overflow: hidden;
-        img{
+
+        img {
             max-width: 100%;
         }
     }
 
-    .extra{
+    .extra {
         background-color: var(--org-extra);
         border-radius: 20px;
-        padding:20px;
-        .extra-title{
+        padding: 20px;
+
+        .extra-title {
             font-size: 20px;
             line-height: 30px;
             margin-bottom: 10px;
@@ -112,18 +122,20 @@
             font-family: var(--org-font-two);
             margin: 0;
         }
-        .extra-single{
+
+        .extra-single {
             text-decoration: none;
-            color:var(--org-black);
-            padding-top:10px;
+            color: var(--org-black);
+            padding-top: 10px;
             display: block;
             font-weight: 600;
-            small{
+
+            small {
                 font-size: 0.6rem;
                 color: var(--org-base);
             }
 
-            &:hover{
+            &:hover {
                 color: var(--org-primary);
             }
 
@@ -131,8 +143,8 @@
     }
 }
 
-#notice-page{
-    .notice{
+#notice-page {
+    .notice {
         text-decoration: none;
         font-size: 20px;
         line-height: 30px;
@@ -140,22 +152,24 @@
         letter-spacing: -0.04em;
         color: var(--org-black);
         font-family: var(--org-font-two);
-        &:hover{
+
+        &:hover {
             color: var(--org-primary);
         }
     }
-    small{
+
+    small {
         font-family: var(--org-font-two);
         font-size: 0.8rem;
-        color:var(--org-base) ;
+        color: var(--org-base);
     }
 }
 
 
-#faq-page{
+#faq-page {
     background-color: var(--org-extra);
 
-    .title{
+    .title {
         font-size: 24px;
         color: var(--org-base);
         font-weight: 700;
@@ -164,7 +178,8 @@
         font-family: var(--org-font-three);
         text-align: center;
     }
-    .subtitle{
+
+    .subtitle {
         margin: 0;
         color: var(--org-black);
         font-size: 50px;
@@ -176,63 +191,71 @@
         text-align: center;
     }
 
-    .accordion{
-        .accordion-item{
+    .accordion {
+        .accordion-item {
             margin-bottom: 20px;
             border-radius: 20px;
             overflow: hidden;
-            .accordion-button{
-                font-family:var(--org-font-two) ;
+
+            .accordion-button {
+                font-family: var(--org-font-two);
                 font-weight: 600;
             }
         }
     }
 }
 
-#comities-page{
+#comities-page {
 
-    .single-committee{
-        .title{
+    .single-committee {
+        .title {
             margin-bottom: 20px;
             font-family: var(--org-font-two);
             font-weight: 700;
         }
-        .detail{
+
+        .detail {
             text-decoration: none;
             font-family: var(--org-font-two);
-            padding:10px 50px;
+            padding: 10px 50px;
             font-weight: 700;
             color: var(--org-white);
             background-color: var(--org-primary);
             border-radius: 20px;
             display: inline-block;
         }
+
         background-color: var(--org-extra);
-        .single-member{
+
+        .single-member {
             background-color: var(--org-white);
             box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             overflow: hidden;
-            .image{
+
+            .image {
                 height: 150px;
                 display: flex;
                 align-items: flex-start;
                 justify-content: center;
                 overflow: hidden;
 
-                img{
+                img {
                     width: 100%;
                 }
             }
-            .desc{
+
+            .desc {
                 padding: 15px;
-                .name{
+
+                .name {
                     font-family: var(--org-font-two);
                     font-weight: 700;
                     font-size: 16px;
                     color: var(--org-black);
                 }
-                .desig{
+
+                .desig {
                     font-weight: 600;
                     color: var(--org-base);
                 }
@@ -241,9 +264,10 @@
         }
     }
 
-    .others{
+    .others {
         position: relative;
-        .search{
+
+        .search {
             position: absolute;
             box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
             top: -25px;
@@ -253,7 +277,8 @@
             transform: translateX(-50%);
             left: 50%;
             overflow: hidden;
-            input{
+
+            input {
                 height: 50px;
                 width: 100%;
                 padding: 10px 20px;
@@ -262,9 +287,10 @@
             }
         }
 
-        .results{
-            margin-top:40px ;
-            .result{
+        .results {
+            margin-top: 40px;
+
+            .result {
                 display: block;
                 text-decoration: none;
                 font-size: 17px;
@@ -275,11 +301,48 @@
                 padding: 15px 20px;
                 border-radius: 20px;
                 box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
-                &:hover{
+
+                &:hover {
                     color: var(--org-base);
                 }
 
             }
+        }
+    }
+}
+
+#issues-page {
+    .issue {
+
+        padding: 15px;
+        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-bottom: 15px;
+
+        .issue-title {
+            font-family: var(--org-font-two);
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            height: 48px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .issue-desc {
+            color: var(--org-black);
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /* Number of lines to display */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 16px;
+            line-height: 20px;
+            height: 80px;
+        }
+        .view-more{
+            font-weight: 600;
         }
     }
 }

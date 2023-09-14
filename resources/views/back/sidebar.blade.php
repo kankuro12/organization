@@ -18,3 +18,5 @@
 <hr class="my-1">
 <a class="link" href="{{route('admin.notice.index',['type'=>6])}}">FAQ</a>
 <hr class="my-1">
+<a class="link" href="{{route('admin.notice.index',['type'=>7])}}">Issues</a>
+<hr class="my-1">
