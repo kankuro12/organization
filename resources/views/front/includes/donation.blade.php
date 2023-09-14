@@ -8,6 +8,11 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="row">
+                        <div class="text-end d-block d-md-none" >
+                            <div class="material-symbols-outlined"  data-bs-dismiss="modal" >
+                                close
+                            </div>
+                        </div>
                         <div class="col-md-6 mb-3" >
                             <img class="w-100" src="{{asset($donationSetting->qr)}}" alt="">
                         </div>

@@ -73,6 +73,13 @@
         </div>
     </div>
 </div>
+<div class="mobile-top">
+
+        <a href="" >
+            Become a member
+        </a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  >Donate Now</a>
+</div>
 <div class="navbar-mobile">
     <div class="d-flex align-items-center justify-content-between">
         <div class="logo">

@@ -123,6 +123,7 @@ body {
 }
 
 .navbar-mobile {
+  border-bottom: 1px solid #e8e8e8;
   z-index: 99;
   background-color: var(--org-white);
   position: sticky;
@@ -192,12 +193,30 @@ body {
   background-color: rgba(33, 79, 119, 0.1);
 }
 
+.mobile-top {
+  display: none;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8e8e8;
+}
+.mobile-top a {
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px;
+  font-family: var(--org-font-two);
+  color: var(--org-base);
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
   .navbar {
     display: none !important;
   }
   .navbar-mobile {
     display: block;
+  }
+  .mobile-top {
+    display: flex;
   }
 }
 #homecarousel {

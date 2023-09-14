@@ -94,6 +94,8 @@
 }
 
 .navbar-mobile{
+    border-bottom: 1px solid #e8e8e8;
+
     z-index: 99;
     background-color: var(--org-white);
     position: sticky;
@@ -169,6 +171,21 @@
 }
 
 
+.mobile-top{
+    display: none;
+    justify-content: space-between;
+    a{
+        text-align: center;
+        text-decoration: none;
+        font-weight: 700;
+        padding: 10px;
+        font-family: var(--org-font-two);
+        color: var(--org-base);
+        font-size: 1rem;
+    }
+
+    border-bottom: 1px solid #e8e8e8;
+}
 @media(max-width:768px){
     .navbar{
         display: none !important;
@@ -177,5 +194,8 @@
     .navbar-mobile{
         display: block;
     }
+    .mobile-top{
+        display: flex;
 
+    }
 }
