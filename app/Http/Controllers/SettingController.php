@@ -62,4 +62,20 @@ class SettingController extends Controller
             return redirect()->back()->with('message','Setting Updated');
         }
     }
+
+    public function fb(Request $request){
+        if(isGet()){
+            $data=getSetting('fb');
+            return view('back.setting.fb',compact('data'));
+        }else{
+            $data=[
+                'data'=>$request->data,
+            ];
+            setSetting('fb',$data);
+            file_put_contents(resource_path('views/front/cache/fb.blade.php'),$request->data);
+            return redirect()->back()->with('message','Setting Updated');
+        }
+    }
+
+
 }

@@ -333,7 +333,8 @@
         .issue-desc {
             color: var(--org-black);
             display: -webkit-box;
-            -webkit-line-clamp: 4; /* Number of lines to display */
+            -webkit-line-clamp: 4;
+            /* Number of lines to display */
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -341,8 +342,100 @@
             line-height: 20px;
             height: 80px;
         }
-        .view-more{
+
+        .view-more {
             font-weight: 600;
         }
     }
+}
+
+
+@media(max-width:768px) {
+    .news-single {
+        .titleholder {
+            position: relative;
+
+            .newstitle {
+                font-size: 20px;
+                line-height: 21px;
+            }
+        }
+    }
+    #notice-page {
+        .notice {
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: 700;
+        }
+    }
+
+    #comities-page {
+
+        .single-committee {
+            .single-member {
+                .image {
+                    height: 100px;
+                }
+
+                .desc {
+                    padding: 5px;
+                    .name {
+                        font-size: 12px;
+                    }
+
+                    .desig {
+                        font-size: 12px;
+                    }
+
+                }
+            }
+        }
+
+        .others {
+            position: relative;
+
+            .search {
+                position: absolute;
+                box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+                top: -25px;
+                border-radius: 15px;
+                width: 80%;
+                max-width: 500px;
+                transform: translateX(-50%);
+                left: 50%;
+                overflow: hidden;
+
+                input {
+                    height: 50px;
+                    width: 100%;
+                    padding: 10px 20px;
+                    border: none;
+                    outline: transparent;
+                }
+            }
+
+            .results {
+                margin-top: 40px;
+
+                .result {
+                    display: block;
+                    text-decoration: none;
+                    font-size: 17px;
+                    color: var(--org-black);
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                    font-family: var(--org-font-two);
+                    padding: 15px 20px;
+                    border-radius: 20px;
+                    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+
+                    &:hover {
+                        color: var(--org-base);
+                    }
+
+                }
+            }
+        }
+    }
+
 }

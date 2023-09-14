@@ -20,7 +20,7 @@
 @section('js')
     @include('front.includes.page')
     <script>
-        const template=`<div class="col-md-4 ">
+        const template=`<div class="col-md-4 mb-3">
                             <a class="news-single" href="{{route('news.single',['slug'=>'xxx_slug'])}}">
                                 <div class="img"><img src="xxx_img" class=".lazy" ></div>
                                 <div class="titleholder">

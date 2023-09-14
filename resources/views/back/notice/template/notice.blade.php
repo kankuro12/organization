@@ -3,7 +3,7 @@
     <div class="notices mb-4">
         @foreach ($notices as $notice)
 
-        <a class="single-notice" href="{{asset($notice->file)}}" target="_blank">
+        <a class="single-notice" href="{{asset($notice->file)}}" target="_blank" download="{{$notice->slug}}">
             <span class="date">
                 {{noticeDate($notice)}}
             </span>

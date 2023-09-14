@@ -17,7 +17,7 @@
     <div id="news-page-single" class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 mb-3">
 
 
                     <div class="title">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-
+                    @include('front.cache.page.issuesextra')
                 </div>
             </div>
         </div>

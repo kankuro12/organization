@@ -44,6 +44,8 @@
                 </div>
             </div>
         </div>
+
+
     @endif
 
     <div id="homegallery">
@@ -66,7 +68,7 @@
                     <div class="semi">
                         Proactively procrastinate cross-platform results via extensive ideas distinctively underwhelm enterprise. Compellingly plagiarize value-added sources with inexpensive schemas.
                     </div>
-                    <div>
+                    <div class="d-none d-md-block">
                         <a href="/faqs" class="more">
                             Get More Help
                         </a>
@@ -75,6 +77,11 @@
                 <div class="col-md-6">
                     @includeIf('front.cache.home.faq')
 
+                </div>
+                <div div class="d-block d-md-none text-center">
+                    <a href="/faqs" class="more">
+                        Get More Help
+                    </a>
                 </div>
             </div>
         </div>

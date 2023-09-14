@@ -1,16 +1,18 @@
-#homecarousel{
+#homecarousel {
     font-family: var(--org-font);
-    .slider-item{
+
+    .slider-item {
         display: flex;
         justify-content: center;
         max-height: 600px;
         overflow: hidden;
         position: relative;
-        img{
+
+        img {
             width: 100%;
         }
 
-        .slider-info{
+        .slider-info {
             position: absolute;
             left: 0px;
             right: 0px;
@@ -19,7 +21,8 @@
             background-color: rgba($color: #000000, $alpha: 0.2);
             text-align: center;
             padding-top: 100px;
-            .title{
+
+            .title {
                 font-size: 40px;
                 color: var(--org-primary);
                 font-weight: 700;
@@ -27,7 +30,7 @@
                 font-family: var(--org-font-three);
             }
 
-            .subtitle{
+            .subtitle {
                 position: relative;
                 font-size: 45px;
                 color: var(--org-white);
@@ -40,58 +43,67 @@
 }
 
 
-#homenotices{
+#homenotices {
     font-family: var(--org-font);
     margin-bottom: 50px;
-    .title{
+
+    .title {
         // font-family: var(--org-font-three);
         font-weight: 700;
         font-size: 30px;
-        color:var(--org-base);
+        color: var(--org-base);
         margin-bottom: 10px;
     }
-    .notices{
-        border-radius:5px;;
+
+    .notices {
+        border-radius: 5px;
+        ;
         border: 1px solid var(--org-base);
-        .single-notice{
+
+        .single-notice {
             text-decoration: none;
             color: var(--org-black);
             padding: 10px;
             display: block;
-            .notice-title{
+
+            .notice-title {
                 font-family: var(--org-font-two);
                 font-weight: 700;
                 font-size: 18px;
                 color: var(--org-black);
-                margin-top:5px;
-                white-space:nowrap;
+                margin-top: 5px;
+                white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
 
             }
-            .date{
+
+            .date {
                 font-size: 10px;
                 font-weight: 600;
-                padding:5px 10px;
+                padding: 5px 10px;
                 border-radius: 5px;
                 background: var(--org-base);
-                color:var(--org-white) ;
+                color: var(--org-white);
             }
-            .link{
+
+            .link {
                 font-size: 14px;
-                font-weight: 600;;
+                font-weight: 600;
+                ;
 
             }
 
-            &:hover{
+            &:hover {
                 color: var(--org-base);
-                .notice-title{
+
+                .notice-title {
                     color: var(--org-base);
                 }
 
             }
 
-            &:not(:last-child){
+            &:not(:last-child) {
                 border-bottom: 1px solid var(--org-base);
             }
 
@@ -99,7 +111,7 @@
 
     }
 
-    .viewmore{
+    .viewmore {
         text-decoration: none;
         background-color: var(--org-primary);
         color: var(--org-black);
@@ -115,45 +127,49 @@
     }
 }
 
-#homemembers{
+#homemembers {
     font-family: var(--org-font);
 
-    .members{
-        .title{
+    .members {
+        .title {
             font-weight: 700;
             font-size: 30px;
-            color:var(--org-base);
+            color: var(--org-base);
             margin-bottom: 10px;
         }
-        .member{
-            margin-bottom:15px ;
+
+        .member {
+            margin-bottom: 15px;
             padding: 10px;
             box-shadow: 0px 0px 5px 0px rgba($color: #000000, $alpha: 0.2);
             font-family: var(--org-font-two);
             color: var(--org-black);
-            .member-image{
+
+            .member-image {
                 height: 100px;
-                display: flex ;
+                display: flex;
                 align-items: center;
                 justify-content: center;
                 position: relative;
 
-                img{
+                img {
                     height: 100%;
                     border-radius: 50%;
                 }
             }
-            .name{
-                padding: 10px 5px 0px 5px ;
-                white-space:nowrap;
+
+            .name {
+                padding: 10px 5px 0px 5px;
+                white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 font-size: 16px;
                 font-weight: 600;
                 color: var(--org-base);
             }
-            .desig{
-                padding: 0px 5px 5px 5px ;
+
+            .desig {
+                padding: 0px 5px 5px 5px;
                 font-size: 16px;
                 font-weight: 600;
 
@@ -163,11 +179,12 @@
     }
 }
 
-#homedonate{
-    background-color:#273633;
+#homedonate {
+    background-color: #273633;
     padding: 100px 0px 50px 0px;
     font-family: var(--org-font);
-    .title{
+
+    .title {
         font-size: 50px;
         line-height: 60px;
         font-weight: 900;
@@ -177,44 +194,50 @@
         font-family: var(--org-font-two);
         margin-bottom: 10px;
     }
-    .desc{
+
+    .desc {
         font-size: 16px;
         color: #98a8a5;
         padding-bottom: 41px;
 
     }
-    .extra{
+
+    .extra {
         height: 100%;
         padding: 20px;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
         background: white;
     }
-    .qr-holder{
+
+    .qr-holder {
         height: 100%;
         padding: 20px;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
         background: white;
-        img{
+
+        img {
             width: 100%;
             // border:1px solid var(--org-black)
         }
     }
 }
 
-#homegallery{
+#homegallery {
     margin-bottom: 150px;
-    .gallery-top{
+
+    .gallery-top {
         position: relative;
         display: block;
         background-color: var(--org-primary);
         text-align: center;
         padding: 60px 0px 50px 0px;
         margin-bottom: 40px;
-        .title{
+
+        .title {
             font-size: 40px;
             font-weight: 900;
             line-height: 40px;
@@ -223,6 +246,7 @@
             font-family: var(--org-font-two);
         }
     }
+
     .gallery-top:before {
         content: "";
         position: absolute;
@@ -236,14 +260,15 @@
 
 }
 
-#homefaq{
+#homefaq {
     font: var(--org-font);
     position: relative;
     display: block;
     background-color: var(--org-extra);
     padding: 120px 0 160px;
     z-index: 1;
-    .title{
+
+    .title {
         font-size: 24px;
         color: var(--org-base);
         font-weight: 700;
@@ -252,7 +277,7 @@
         font-family: var(--org-font-three);
     }
 
-    .subtitle{
+    .subtitle {
         margin: 0;
         color: var(--org-black);
         font-size: 50px;
@@ -262,14 +287,16 @@
         margin-top: 6px;
         font-family: var(--org-font-two);
     }
-    .semi{
+
+    .semi {
 
         font-size: 16px;
         padding-bottom: 41px;
         margin-right: 70px;
         color: var(--org-gray);
     }
-    .more{
+
+    .more {
         text-decoration: none;
         display: inline-block;
         background-color: var(--org-primary);
@@ -284,13 +311,14 @@
 
     }
 
-    .accordion{
-        .accordion-item{
+    .accordion {
+        .accordion-item {
             margin-bottom: 20px;
             border-radius: 20px;
             overflow: hidden;
-            .accordion-button{
-                font-family:var(--org-font-two) ;
+
+            .accordion-button {
+                font-family: var(--org-font-two);
                 font-weight: 600;
             }
         }
@@ -298,10 +326,10 @@
 }
 
 
-#homenews
-{
-    padding:100px 0px;
-    .title{
+#homenews {
+    padding: 100px 0px;
+
+    .title {
         text-align: center;
         font-size: 24px;
         color: var(--org-base);
@@ -312,7 +340,7 @@
 
     }
 
-    .subtitle{
+    .subtitle {
         text-align: center;
         font-family: var(--org-font-two);
         color: var(--org-black);
@@ -323,5 +351,233 @@
         margin-top: 6px;
         margin-bottom: 50px;
 
+    }
+}
+
+
+@media(max-width:768px) {
+
+    #homecarousel {
+        .slider-item {
+            .slider-info {
+                padding-top: 75px;
+                padding-left: 20px;
+                padding-right: 20px;
+
+                .title {
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 20px;
+                }
+
+                .subtitle {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+        }
+
+    }
+
+    #homenotices {
+        .title {
+            font-size: 20px;
+        }
+
+        .notices {
+            border-radius: 5px;
+            ;
+            border: 1px solid var(--org-base);
+
+            .single-notice {
+                text-decoration: none;
+                color: var(--org-black);
+                padding: 10px;
+                display: block;
+
+                .notice-title {
+                    font-size: 14px;
+                }
+
+                .date {
+                    font-size: 8px;
+                }
+
+            }
+
+        }
+
+        .viewmore {
+
+            font-size: 12px;
+            border-radius: 20px;
+            padding: 10px 49px 10px;
+            transition: all 0.5s linear;
+
+
+        }
+    }
+
+    #homemembers {
+
+        .members {
+            .title {
+                font-size: 20px;
+            }
+
+            .member {
+                margin-bottom: 15px;
+                padding: 10px;
+                box-shadow: 0px 0px 5px 0px rgba($color: #000000, $alpha: 0.2);
+                font-family: var(--org-font-two);
+                color: var(--org-black);
+
+                .member-image {
+                    height: 100px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        border-radius: 0px;
+                    }
+                }
+
+                .name {
+                    padding: 5px 5px 0px 5px;
+                    font-size: 12px;
+
+                }
+
+                .desig {
+                    padding: 0px 5px 5px 5px;
+                    font-size: 12px;
+                    font-weight: 600;
+
+                }
+
+            }
+        }
+    }
+
+    #homedonate {
+        padding: 50px 0px 50px 0px;
+        .title {
+            text-align: center;
+            font-size: 30px;
+            line-height: 35px;
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            text-align: center;
+            font-size: 14px;
+            padding-bottom: 25px;
+        }
+
+        .extra {
+            margin-top: 15px;
+        }
+
+    }
+
+    #homegallery {
+        margin-bottom: 30px;
+
+        .gallery-top {
+            position: relative;
+            display: block;
+            background-color: var(--org-primary);
+            text-align: center;
+            padding: 30px 0px 25px 0px;
+            margin-bottom: 30px;
+
+            .title {
+                font-size: 20px;
+                font-weight: 800;
+                line-height: 20px;
+            }
+        }
+
+        .gallery-top:before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-top: 10px solid var(--org-primary);
+        }
+
+    }
+
+    #homefaq {
+
+        font: var(--org-font);
+        position: relative;
+        display: block;
+        background-color: var(--org-extra);
+        padding: 60px 0 60px;
+        z-index: 1;
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            color: var(--org-base);
+            font-weight: 700;
+            line-height: 24px;
+            margin-bottom: 10px;
+            font-family: var(--org-font-three);
+        }
+
+        .subtitle {
+            font-size: 25px;
+            line-height: 30px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .semi {
+          display: none;
+        }
+
+        .more {
+            text-align: center;
+            font-size: 12px;
+            padding: 10px 30px 10px;
+            border-radius: 20px;
+        }
+
+        .accordion {
+            .accordion-item {
+                margin-bottom: 10px;
+                border-radius: 10px;
+                overflow: hidden;
+
+                .accordion-body{
+                    font-size: 14px;
+                }
+                .accordion-button {
+                    padding: 10px;
+                    font-family: var(--org-font-two);
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    #homenews {
+        padding: 100px 0px;
+        .subtitle {
+            font-size: 30px;
+            line-height: 35px;
+        }
     }
 }

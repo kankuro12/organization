@@ -63,14 +63,54 @@
             <a href="{{route('notices')}}" class="link">Notices</a>
             <a href="{{route('committees')}}" class="link">Committees</a>
             <a href="{{route('news')}}" class="link">News</a>
-            <a href="" class="link">Issues</a>
+            <a href="{{route('issues')}}" class="link">Issues</a>
             <a href="{{route('gallery')}}" class="link">Gallery</a>
-            <a href="" class="link">Resources</a>
             <a href="{{route('faq')}}" class="link">Help</a>
             <a href="" class="link">Contact</a>
-            <a href="" id="donate">
+            <a href="#" id="donate" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Donate Now
             </a>
         </div>
     </div>
+</div>
+<div class="navbar-mobile">
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="logo">
+            <a href="/">
+                <img src="{{ vasset($generalSetting->header_logo ?? '') }}" alt="Logo">
+            </a>
+        </div>
+        <div class="toogle-btn" onclick="document.getElementById('sidebar').classList.add('active');">
+            <span class="material-symbols-outlined">menu</span>
+        </div>
+    </div>
+</div>
+
+<div class="sidebar" id="sidebar">
+    <div class="inner">
+        <div class="donate d-flex align-items-center justify-content-between">
+            <div  data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="document.getElementById('sidebar').classList.remove('active');">
+                Donate Now
+            </div>
+            <div class="material-symbols-outlined"  onclick="document.getElementById('sidebar').classList.remove('active');" >
+                close
+            </div>
+        </div>
+        <div class="line"></div>
+        <div>
+            <a href="/" class="link">Home</a>
+            <a href="{{route('notices')}}" class="link">Notices</a>
+            <a href="{{route('committees')}}" class="link">Committees</a>
+            <a href="{{route('news')}}" class="link">News</a>
+            <a href="{{route('issues')}}" class="link">Issues</a>
+            <a href="{{route('gallery')}}" class="link">Gallery</a>
+            <a href="{{route('faq')}}" class="link">Help</a>
+            <a href="" class="link">Contact</a>
+            <a  data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="document.getElementById('sidebar').classList.remove('active');">
+                Donate Now
+            </a>
+        </div>
+
+    </div>
+    <div class="exit"  onclick="document.getElementById('sidebar').classList.remove('active');"></div>
 </div>

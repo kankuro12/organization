@@ -31,7 +31,7 @@
                     <div class="row">
 
                         @foreach ($members->take(4) as $member)
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-6 mb-3">
                                 <div class="single-member">
                                     <div class="image">
                                         <img src="{{ asset($member->image) }}" alt="">
@@ -50,7 +50,7 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="text-center my-4">
+                    <div class="text-center my-md-4 my-2 ">
 
                         <a class="detail" href="{{route('committee.single',['slug'=>$committee->slug])}}">View More</a>
                     </div>
@@ -63,7 +63,7 @@
 
 
 
-        <div class="others py-5">
+        <div class="others py-3 py-md-5">
             <div class="container">
                 <div class="search">
                     <input type="search" placeholder="Search Comitties" id="search" oninput="search()" >

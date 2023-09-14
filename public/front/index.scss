@@ -23,6 +23,7 @@
     --org-bdr-color-rgb: 238, 233, 219;
     --org-bdr-radius: 20px;
     --org-nav:#90c8be;
+    --org-blue:#214F77;
 }
 
 
@@ -41,8 +42,9 @@ body{
 
 
 .jumbotron{
+    padding: 20px 10px;
     background: var(--org-gray);
-    height: 150px;
+    min-height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,6 +66,7 @@ body{
 }
 
 #newspagination{
+
 
     .pagination{
 

@@ -69,3 +69,17 @@
 
     }
 }
+
+
+@media(max-width:768px) {
+    .galleries{
+        .gallery-single{
+            height: 125px;
+            .overlay{
+                padding-bottom: 10px;
+                font-size: 14px;
+                line-height: 15px;
+            }
+        }
+    }
+}
