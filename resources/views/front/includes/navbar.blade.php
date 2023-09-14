@@ -9,7 +9,7 @@
     </div>
     <div class="pt-3">
         <div class="navbar-top">
-            <a href="" class="top-link">
+            <a target="_blank" href="{{config('app.member_url')}}" class="top-link">
                 <div>
                     <span class=" top-icon material-symbols-outlined">group</span>
                 </div>
@@ -75,7 +75,7 @@
 </div>
 <div class="mobile-top">
 
-        <a href="" >
+        <a  target="_blank" href="{{config('app.member_url')}}" >
             Become a member
         </a>
         <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  >Donate Now</a>

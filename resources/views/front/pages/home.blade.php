@@ -79,7 +79,7 @@
 
                 </div>
                 <div div class="d-block d-md-none text-center">
-                    <a href="/faqs" class="more">
+                    <a href="{{route('faq')}}" class="more">
                         Get More Help
                     </a>
                 </div>
