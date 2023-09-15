@@ -36,12 +36,12 @@ return [
             'throw' => false,
             'permissions' => [
                 'file' => [
-                    'public' => 0664,
-                    'private' => 0664,
+                    'public' => 0755,
+                    'private' => 0755,
                 ],
                 'dir' => [
-                    'public' => 0664,
-                    'private' => 0664,
+                    'public' => 0755,
+                    'private' => 0755,
                 ],
             ],
 
