@@ -34,6 +34,17 @@ return [
             'driver' => 'local',
             'root' => public_path(),
             'throw' => false,
+            'permissions' => [
+                'file' => [
+                    'public' => 0664,
+                    'private' => 0600,
+                ],
+                'dir' => [
+                    'public' => 0664,
+                    'private' => 0600,
+                ],
+            ],
+
         ],
 
         'public' => [
