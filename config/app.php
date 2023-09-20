@@ -217,5 +217,7 @@ return [
     'member_url'=>env('MEMBER_URL','https://forms.gle/bg2qSYNL1xsfPpF86'),
     'has_donation'=>env('has_donation',false),
     'has_member'=>env('has_member',false),
+    "CLOUDINARY_URL"=>env('CLOUDINARY_URL',null),
+    "CLOUDINARY_public"=>env('CLOUDINARY_public',null),
 
 ];
