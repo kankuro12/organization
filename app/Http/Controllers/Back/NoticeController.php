@@ -45,6 +45,7 @@ class NoticeController extends Controller
             if($request->hasFile('file')){
                 $notice->file=$request->file->store('uploads/image');
             }
+
             $notice->short_desc=$request->short_desc;
             $notice->desc=$request->desc;
             $notice->is_main=$request->filled('is_main');
