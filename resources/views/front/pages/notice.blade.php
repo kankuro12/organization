@@ -19,7 +19,7 @@
                     {{noticeDate($notice)}}
                 </small>
                 <br>
-                <a href="{{asset($notice->file)}}" class="notice" target="_blank" download="{{$notice->title}}">{{$notice->title}}</a>
+                <a href="{{vasset($notice->file)}}" class="notice" target="_blank" download="{{$notice->title}}">{{$notice->title}}</a>
                 <hr>
             @endforeach
 

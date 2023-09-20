@@ -7,7 +7,7 @@
                 @foreach ($allnews as $news)
                 <div class="col-md-4 mb-3">
                     <a class="news-single" href="{{route('news.single',['slug'=>$news->slug])}}">
-                        <div class="img"><img src="{{asset($news->file)}}" alt=""></div>
+                        <div class="img"><img src="{{vasset($news->file)}}" alt=""></div>
                        <div class="titleholder">
                             <div class="date">{{noticeDate($news)}}</div>
                             <div class="newstitle">

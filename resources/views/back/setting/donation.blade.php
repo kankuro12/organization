@@ -16,7 +16,7 @@
                 <div class="col-md-6">
                     <label for="qr">QR</label>
                     <input type="file" class="form-control dropify" name="qr" id="qr" accept="image/*"
-                        @if (isset($data->qr)) data-default-file="{{ asset($data->qr) }}"
+                        @if (isset($data->qr)) data-default-file="{{ vasset($data->qr) }}"
                   @else
                     required @endif>
 

@@ -6,7 +6,7 @@
                 <div class="col-md-3 col-6 p-2">
                     <a class="gallery-single" href="{{route('gallery.single',['slug'=>$gallery->slug])}}">
                         <div class="img">
-                            <img src="{{asset($gallery->file)}}" alt="">
+                            <img src="{{vasset($gallery->file)}}" alt="">
                         </div>
                         <div class="overlay">
                             {{$gallery->title}}

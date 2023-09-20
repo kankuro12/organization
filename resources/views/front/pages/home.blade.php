@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="qr-holder">
-                                <img src="{{asset($donationSetting->qr)}}" alt="">
+                                <img src="{{vasset($donationSetting->qr)}}" alt="">
                             </div>
                         </div>
                         <div class="col-md-4">

@@ -14,7 +14,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-3" >
-                            <img class="w-100" src="{{asset($donationSetting->qr)}}" alt="">
+                            <img class="w-100" src="{{vasset($donationSetting->qr)}}" alt="">
                         </div>
                         <div class="col-md-6 mb-3 text-center" >
                             {!! $donationSetting->extra !!}

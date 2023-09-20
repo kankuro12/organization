@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="image">
-                    <img class="w-100" src="{{asset($newsSingle->file)}}" alt="">
+                    <img class="w-100" src="{{vasset($newsSingle->file)}}" alt="">
                     <div class="date">
                         {{noticeDate($newsSingle)}}
                     </div>
