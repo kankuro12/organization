@@ -16,36 +16,39 @@
 
     </div>
 
-    @php
-        $donationSetting = getSetting('donation');
-    @endphp
-    @if (isset($donationSetting->title))
-        <div id="homedonate">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="title">
-                            {{$donationSetting->title}}
+    @if (config('app.has_donation'))
+
+        @php
+            $donationSetting = getSetting('donation');
+        @endphp
+        @if (isset($donationSetting->title))
+            <div id="homedonate">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="title">
+                                {{$donationSetting->title}}
+                            </div>
+                            <div class="desc">
+                                {{$donationSetting->about}}
+                            </div>
                         </div>
-                        <div class="desc">
-                            {{$donationSetting->about}}
+                        <div class="col-md-3">
+                            <div class="qr-holder">
+                                <img src="{{asset($donationSetting->qr)}}" alt="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="qr-holder">
-                            <img src="{{asset($donationSetting->qr)}}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="extra">
-                            {!! $donationSetting->extra !!}
+                        <div class="col-md-4">
+                            <div class="extra">
+                                {!! $donationSetting->extra !!}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
+        @endif
     @endif
 
     <div id="homegallery">

@@ -215,5 +215,7 @@ return [
 
     'version'=>env('APP_VERSION',0),
     'member_url'=>env('MEMBER_URL','https://forms.gle/bg2qSYNL1xsfPpF86'),
+    'has_donation'=>env('has_donation',false),
+    'has_member'=>env('has_member',false),
 
 ];

@@ -68,8 +68,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
     Route::prefix('setting')->name('setting.')->group(function(){
         Route::match(['GET','POST'],'general',[SettingController::class,'general'])->name('general');
+        Route::match(['GET','POST'],'aboutus',[SettingController::class,'aboutus'])->name('aboutus');
         Route::match(['GET','POST'],'donation',[SettingController::class,'donation'])->name('donation');
         Route::match(['GET','POST'],'fb',[SettingController::class,'fb'])->name('fb');
-
     });
+
+
 });

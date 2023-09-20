@@ -21,6 +21,8 @@
     <hr class="my-1">
     <a class="link ps-1" href="{{route('admin.notice.index',['type'=>7])}}">Issues</a>
     <hr class="my-1">
+    {{-- <a class="link ps-1" href="{{route('admin.notice.index',['type'=>8])}}">About Us</a>
+    <hr class="my-1"> --}}
     <a class="link ps-1" href="{{route('admin.slider.index')}}">Sliders</a>
     <hr class="my-1">
     <a class="link ps-1" href="{{route('admin.setting.general')}}">General Setting</a>

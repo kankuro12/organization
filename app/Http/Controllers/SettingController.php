@@ -77,5 +77,13 @@ class SettingController extends Controller
         }
     }
 
+    public function aboutus(Request $request){
+        if(isGet()){
+
+        }else{
+
+        }
+    }
+
 
 }

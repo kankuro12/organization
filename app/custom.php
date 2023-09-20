@@ -4,6 +4,9 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
+use Cloudinary\Api\Upload\UploadApi;
+use Cloudinary\Configuration\Configuration;
+
 class SettingMemory{
     public static $data=[];
 }
@@ -51,7 +54,7 @@ function isGet() {
 
 
 function noticeType($type){
-    return ['','Notice','News','Issue','Teams','Gallery','FAQ','Issue'][$type];
+    return ['','Notice','News','Issue','Teams','Gallery','FAQ','Issue','About US'][$type];
 }
 
 function noticeDate($notice){
@@ -192,3 +195,24 @@ function createThumbnail($sourceFilePath, $destinationDirectory, $maxWidth = 150
     return $retpath;
 }
 
+
+function casset($path){
+    return config('app.CLOUDINARY_public').$path;
+}
+
+function cloudinaryUpload($filePath){
+    Configuration::instance(config('app.CLOUDINARY_URL'));
+    $fileInfo = pathinfo($filePath);
+    $fileName = $fileInfo['filename'];
+
+    $upload = new UploadApi();
+    $info= $upload->upload($filePath, [
+            'public_id' => $fileName,
+            'use_filename' => TRUE,
+            'overwrite' => TRUE]);
+    return  str_replace(
+        config('app.CLOUDINARY_public'),
+        "",
+        (json_decode(json_encode($info)))->secure_url
+    );
+}

@@ -55,6 +55,14 @@ class NoticeController extends Controller
         }
     }
 
+    public function del(Request $request,Notice $notice){
+        $type=$notice->type;
+        $notice->delete();
+        $this->render($type);
+        return redirect()->back();
+    }
+
+
     public function render($type){
 
         if($type==1){
