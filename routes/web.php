@@ -26,6 +26,7 @@ Route::get('/gallery', [HomeController::class,'gallery'])->name('gallery');
 Route::get('/faq', [HomeController::class,'faq'])->name('faq');
 Route::get('/committees', [HomeController::class,'committees'])->name('committees');
 Route::get('/issues', [HomeController::class,'issues'])->name('issues');
+Route::get('/about', [HomeController::class,'about'])->name('about');
 
 Route::get('/gallery/{slug}', [HomeController::class,'gallerySingle'])->name('gallery.single');
 Route::get('/news/{slug}', [HomeController::class,'newsSingle'])->name('news.single');
@@ -49,7 +50,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('del/{notice}',[NoticeController::class,'del'])->name('del');
         Route::get('render/{type}',[NoticeController::class,'render'])->name('render');
         Route::post('image/{type}',[NoticeController::class,'image'])->name('image');
-
     });
 
     Route::prefix('team')->name('team.')->group(function(){
@@ -68,7 +68,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
     Route::prefix('setting')->name('setting.')->group(function(){
         Route::match(['GET','POST'],'general',[SettingController::class,'general'])->name('general');
-        Route::match(['GET','POST'],'aboutus',[SettingController::class,'aboutus'])->name('aboutus');
+        // Route::match(['GET','POST'],'aboutus',[SettingController::class,'aboutus'])->name('aboutus');
         Route::match(['GET','POST'],'donation',[SettingController::class,'donation'])->name('donation');
         Route::match(['GET','POST'],'fb',[SettingController::class,'fb'])->name('fb');
     });

@@ -91,6 +91,8 @@ class NoticeController extends Controller
         }
     }
 
+
+
     public function image($type,Request $request){
 
         return response()->json(

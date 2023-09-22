@@ -4,6 +4,8 @@
 @endsection
 @section('content')
     @includeIf('front.cache.home.slider')
+    @includeIf('front.cache.home.about')
+
     <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-md-7">

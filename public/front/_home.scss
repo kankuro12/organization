@@ -354,6 +354,56 @@
     }
 }
 
+#home-about{
+    display: flex;
+    background-color: var(--org-extra);
+    .image{
+        padding: 75px;
+        width: 45%;
+        img{
+            max-width: 100%;
+            border-radius:50px;
+        }
+    }
+    .home-text{
+        padding: 75px 30px;
+        .title{
+            font-size: 50px;
+            color: var(--org-color);
+            font-weight: 700;
+            line-height: 60px;
+            margin-bottom: 20px;
+            font-family: var(--org-font-two);
+        }
+        .subtitle{
+            font-size: 24px;
+            color: var(--org-base);
+            font-weight: 700;
+            line-height: 24px;
+            margin-bottom: 10px;
+            font-family: var(--org-font-three);
+        }
+        .desc{
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+        .more{
+            color: var(--org-black);
+            background-color: var(--org-primary);
+            padding:20px 60px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: 0.5s all ;
+            &:hover{
+                background-color:var(--org-base) ;
+                color:var(--org-white)
+            }
+
+        }
+    }
+}
+
 
 @media(max-width:768px) {
 
@@ -580,4 +630,46 @@
             line-height: 35px;
         }
     }
+
+    #home-about{
+        display: block;
+        .image{
+            padding: 20px;
+            width: 100%;
+            img{
+                border-radius:20px;
+            }
+        }
+        .home-text{
+            text-align: center;
+            padding: 20px;
+            .title{
+                font-size: 30px;
+                color: var(--org-color);
+                font-weight: 700;
+                line-height: 30px;
+                margin-bottom: 20px;
+                font-family: var(--org-font-two);
+            }
+            .subtitle{
+                font-size: 20px;
+                color: var(--org-base);
+                font-weight: 700;
+                line-height: 24px;
+                margin-bottom: 10px;
+                font-family: var(--org-font-three);
+            }
+            .desc{
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+            .more{
+                padding:10px 40px;
+                // margin:30px 0px;
+
+                display: inline-block;
+            }
+        }
+    }
 }
+

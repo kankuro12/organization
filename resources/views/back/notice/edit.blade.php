@@ -39,6 +39,8 @@
                     <label for="short_desc">
                         @if($notice->type==6)
                         Answer
+                        @elseif($notice->type==8)
+                        Short About
                         @else
                         Short Description
                         @endif
@@ -47,11 +49,13 @@
                 </div>
             @endif
 
-            @if ($notice->type == 2 || $notice->type==7)
+            @if ($notice->type == 2 || $notice->type==7 || $notice->type==8)
                 <div class="mb-2">
                     <label for="desc">
                         @if ($notice->type == 2)
                             Full News
+                        @elseif($notice->type==8)
+                            Full About
                         @endif
                     </label>
                     <textarea type="text" name="desc" id="desc" class="form-control" required>{{$notice->desc}}</textarea>
@@ -68,7 +72,7 @@
     </div>
 @endsection
 @section('js')
-    @if ($notice->type == 2 || $notice->type==7)
+    @if ($notice->type == 2 || $notice->type==7 || $notice->type==8)
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/ui/trumbowyg.min.css"
             integrity="sha512-Fm8kRNVGCBZn0sPmwJbVXlqfJmPC13zRsMElZenX6v721g/H7OukJd8XzDEBRQ2FSATK8xNF9UYvzsCtUpfeJg=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />

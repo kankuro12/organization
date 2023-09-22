@@ -512,6 +512,55 @@ body {
   margin-bottom: 50px;
 }
 
+#home-about {
+  display: flex;
+  background-color: var(--org-extra);
+}
+#home-about .image {
+  padding: 75px;
+  width: 45%;
+}
+#home-about .image img {
+  max-width: 100%;
+  border-radius: 50px;
+}
+#home-about .home-text {
+  padding: 75px 30px;
+}
+#home-about .home-text .title {
+  font-size: 50px;
+  color: var(--org-color);
+  font-weight: 700;
+  line-height: 60px;
+  margin-bottom: 20px;
+  font-family: var(--org-font-two);
+}
+#home-about .home-text .subtitle {
+  font-size: 24px;
+  color: var(--org-base);
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 10px;
+  font-family: var(--org-font-three);
+}
+#home-about .home-text .desc {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+#home-about .home-text .more {
+  color: var(--org-black);
+  background-color: var(--org-primary);
+  padding: 20px 60px;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: 600;
+  transition: 0.5s all;
+}
+#home-about .home-text .more:hover {
+  background-color: var(--org-base);
+  color: var(--org-white);
+}
+
 @media (max-width: 768px) {
   #homecarousel .slider-item .slider-info {
     padding-top: 75px;
@@ -680,6 +729,44 @@ body {
   #homenews .subtitle {
     font-size: 30px;
     line-height: 35px;
+  }
+  #home-about {
+    display: block;
+  }
+  #home-about .image {
+    padding: 20px;
+    width: 100%;
+  }
+  #home-about .image img {
+    border-radius: 20px;
+  }
+  #home-about .home-text {
+    text-align: center;
+    padding: 20px;
+  }
+  #home-about .home-text .title {
+    font-size: 30px;
+    color: var(--org-color);
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 20px;
+    font-family: var(--org-font-two);
+  }
+  #home-about .home-text .subtitle {
+    font-size: 20px;
+    color: var(--org-base);
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 10px;
+    font-family: var(--org-font-three);
+  }
+  #home-about .home-text .desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  #home-about .home-text .more {
+    padding: 10px 40px;
+    display: inline-block;
   }
 }
 .news-single {
