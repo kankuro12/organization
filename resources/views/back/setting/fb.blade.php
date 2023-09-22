@@ -1,7 +1,7 @@
 @extends('back.layout')
 @section('head-title')
 <a href="#">Setting</a>
-<a href="#">General</a>
+<a href="#">Facebook</a>
 
 @endsection
 @section('content')

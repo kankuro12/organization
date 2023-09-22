@@ -77,10 +77,12 @@ class SettingController extends Controller
         }
     }
 
-    public function aboutus(Request $request){
+    public function contact(Request $request){
         if(isGet()){
-
+            $data=getSetting('contact');
+            return view('back.setting.contact',compact('data'));
         }else{
+            $oldData=getSetting('contact');
 
         }
     }
