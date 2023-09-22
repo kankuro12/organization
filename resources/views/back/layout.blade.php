@@ -17,6 +17,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <style>
+            body{
+                background-color: #fafafa;
+            }
+        </style>
     <title>{{ config('app.name') }} @yield('title')</title>
     <style>
         .dashboard-links a:not(:last-child)::after {

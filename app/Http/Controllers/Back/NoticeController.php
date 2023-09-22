@@ -48,7 +48,7 @@ class NoticeController extends Controller
 
             $notice->short_desc=$request->short_desc;
             $notice->desc=$request->desc;
-            $notice->is_main=$request->filled('is_main');
+
             $notice->save();
 
             $this->render($notice->type);
@@ -88,6 +88,18 @@ class NoticeController extends Controller
             file_put_contents(resource_path('views/front/cache/page/issues.blade.php'),view('back.notice.template.issues',compact('issues'))->render());
             file_put_contents(resource_path('views/front/cache/page/issuesextra.blade.php'),view('back.notice.template.issuesextra',compact('issues'))->render());
 
+        }elseif($type==8){
+            $abouts=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->get();
+            $about=$abouts->where('is_main',1)->first();
+            if($about!=null){
+                file_put_contents(resource_path('views/front/cache/home/about.blade.php'),view('back.notice.template.homeabout',compact('about'))->render());
+            }else{
+                file_put_contents(resource_path('views/front/cache/home/about.blade.php'),'');
+
+            }
+
+            file_put_contents(resource_path('views/front/cache/page/about.blade.php'),view('back.notice.template.about',compact('abouts'))->render());
+
         }
     }
 
@@ -100,5 +112,13 @@ class NoticeController extends Controller
                 'success'=> true, // Must be false if upload fails
                 'file'=>asset($request->fileToUpload->store('uploads/image/'.(noticeType($type))))
             ]);
+    }
+
+    public function main(Notice $notice){
+        DB::table('notices')->update(['is_main'=>0]);
+        $notice->is_main=true;
+        $notice->save();
+        $this->render($notice->type);
+        return redirect()->back();
     }
 }

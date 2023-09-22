@@ -47,6 +47,10 @@
                         @if ($type==5)
                             <a href="{{route('admin.gallery.index',['notice'=>$notice->id])}}" class="btn btn-sm btn-primary" >Manage Images</a>
                         @endif
+
+                        @if ($type==8 && $notice->is_main == 0)
+                            <a href="{{route('admin.notice.main',['notice'=>$notice->id])}}" class="btn btn-sm btn-primary" >Show In Home</a>
+                        @endif
                     </td>
 
                 </tr>

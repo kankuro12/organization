@@ -366,6 +366,7 @@
         }
     }
     .home-text{
+        flex:1;
         padding: 75px 30px;
         .title{
             font-size: 50px;
@@ -381,11 +382,15 @@
             font-weight: 700;
             line-height: 24px;
             margin-bottom: 10px;
+
             font-family: var(--org-font-three);
         }
         .desc{
             font-size: 20px;
             margin-bottom: 40px;
+            line-height: 24px;
+            max-height: 72px;
+            overflow: hidden;
         }
         .more{
             color: var(--org-black);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Back\DashboardController;
 use App\Http\Controllers\Back\GalleryController;
 use App\Http\Controllers\Back\NoticeController;
 use App\Http\Controllers\Back\SliderController;
@@ -32,10 +33,12 @@ Route::get('/gallery/{slug}', [HomeController::class,'gallerySingle'])->name('ga
 Route::get('/news/{slug}', [HomeController::class,'newsSingle'])->name('news.single');
 Route::get('/committees/{slug}', [HomeController::class,'committeeSingle'])->name('committee.single');
 Route::get('/issues/{slug}', [HomeController::class,'issueSingle'])->name('issue.single');
+Route::get('/about/{slug}', [HomeController::class,'aboutSingle'])->name('about.single');
 
 
 Route::prefix('admin')->name('admin.')->group(function(){
 
+    Route::get('',[DashboardController::class,'index'])->name('index');
     Route::prefix('slider')->name('slider.')->group(function(){
         Route::get('',[SliderController::class,'index'])->name('index');
         Route::match(['GET','POST'],'add',[SliderController::class,'add'])->name('add');
@@ -48,6 +51,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::match(['GET','POST'],'add/{type}',[NoticeController::class,'add'])->name('add');
         Route::match(['GET','POST'],'edit/{notice}',[NoticeController::class,'edit'])->name('edit');
         Route::get('del/{notice}',[NoticeController::class,'del'])->name('del');
+        Route::get('main/{notice}',[NoticeController::class,'main'])->name('main');
         Route::get('render/{type}',[NoticeController::class,'render'])->name('render');
         Route::post('image/{type}',[NoticeController::class,'image'])->name('image');
     });
@@ -71,6 +75,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         // Route::match(['GET','POST'],'aboutus',[SettingController::class,'aboutus'])->name('aboutus');
         Route::match(['GET','POST'],'donation',[SettingController::class,'donation'])->name('donation');
         Route::match(['GET','POST'],'fb',[SettingController::class,'fb'])->name('fb');
+        Route::match(['GET','POST'],'contact',[SettingController::class,'contact'])->name('contact');
     });
 
 

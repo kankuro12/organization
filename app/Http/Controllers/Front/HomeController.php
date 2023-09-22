@@ -72,4 +72,14 @@ class HomeController extends Controller
         $issues= DB::table('notices')->where('type',7)->get(['slug','title','short_desc']);
         return view('front.pages.issuesingle',compact('issues','currentIssue'));
     }
+
+    public function about(){
+        return view('front.pages.about');
+    }
+
+    public function aboutSIngle($slug){
+        $about=DB::table('notices')->where('slug',$slug)->first(['title','file','short_desc','desc']);
+        return view('front.pages.aboutsingle',compact('about'));
+
+    }
 }

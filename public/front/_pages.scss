@@ -349,6 +349,75 @@
     }
 }
 
+#about-page{
+
+    .single-about{
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow:
+        0.3px 0.2px 1.9px rgba(0, 0, 0, 0.05),
+        0.8px 0.5px 4.3px rgba(0, 0, 0, 0.037),
+        1.5px 1px 7.7px rgba(0, 0, 0, 0.031),
+        2.4px 1.6px 12.8px rgba(0, 0, 0, 0.027),
+        4px 2.6px 21.2px rgba(0, 0, 0, 0.023),
+        6.9px 4.6px 37px rgba(0, 0, 0, 0.019),
+        15px 10px 80px rgba(0, 0, 0, 0.013)
+        ;
+        display: flex;
+        .image{
+            background-color: var(--org-extra);
+            width: 200px;
+            img{
+                width: 100%;
+            }
+        }
+
+        .text{
+            padding: 20px 40px 20px 20px;
+            flex:1;
+            .title{
+                font-weight: 700;
+                font-size: 25px;
+                font-family: var(--org-font-two);
+                margin-bottom:10px;
+            }
+            .desc{
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: 600;
+                height: 40px;
+                overflow: hidden;
+            }
+            .detail{
+                color: var(--org-base);
+                font-weight: 600;
+                font-size: 16px;
+                text-decoration: none;
+                &:hover{
+                    color: var(--org-primary);
+                }
+            }
+        }
+    }
+}
+
+#aboutsingle-page{
+    h2{
+        font-family: var(--org-font-two);
+    }
+    .image{
+        border-radius: 10px;
+        overflow: hidden;
+        img{
+        }
+    }
+    .desc{
+        img{
+            max-width: 100%;
+        }
+    }
+}
 
 @media(max-width:768px) {
     .news-single {
@@ -433,6 +502,47 @@
                         color: var(--org-base);
                     }
 
+                }
+            }
+        }
+    }
+
+
+    #about-page{
+
+        .single-about{
+            text-align: center;
+            display: block;
+            .image{
+                background-color: var(--org-extra);
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+
+            .text{
+                padding: 20px;
+                flex:1;
+                .title{
+                    font-weight: 700;
+                    font-size: 18px;
+                    font-family: var(--org-font-two);
+                    margin-bottom:10px;
+                }
+                .desc{
+                    font-size: 14px;
+                    line-height: 18px;
+                    height: 54px;
+                }
+                .detail{
+                    color: var(--org-base);
+                    font-weight: 600;
+                    font-size: 16px;
+                    text-decoration: none;
+                    &:hover{
+                        color: var(--org-primary);
+                    }
                 }
             }
         }

@@ -65,6 +65,7 @@
             <a href="{{route('notices')}}" class="link">Notices</a>
             <a href="{{route('committees')}}" class="link">Committees</a>
             <a href="{{route('news')}}" class="link">News</a>
+            <a href="{{route('about')}}" class="link">About Us</a>
             <a href="{{route('issues')}}" class="link">Issues</a>
             <a href="{{route('gallery')}}" class="link">Gallery</a>
             <a href="{{route('faq')}}" class="link">Help</a>
@@ -128,6 +129,7 @@
             <a href="{{route('notices')}}" class="link">Notices</a>
             <a href="{{route('committees')}}" class="link">Committees</a>
             <a href="{{route('news')}}" class="link">News</a>
+            <a href="{{route('about')}}" class="link">About Us</a>
             <a href="{{route('issues')}}" class="link">Issues</a>
             <a href="{{route('gallery')}}" class="link">Gallery</a>
             <a href="{{route('faq')}}" class="link">Help</a>
