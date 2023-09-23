@@ -28,6 +28,7 @@ Route::get('/faq', [HomeController::class,'faq'])->name('faq');
 Route::get('/committees', [HomeController::class,'committees'])->name('committees');
 Route::get('/issues', [HomeController::class,'issues'])->name('issues');
 Route::get('/about', [HomeController::class,'about'])->name('about');
+Route::get('/contact', [HomeController::class,'contact'])->name('contact');
 
 Route::get('/gallery/{slug}', [HomeController::class,'gallerySingle'])->name('gallery.single');
 Route::get('/news/{slug}', [HomeController::class,'newsSingle'])->name('news.single');

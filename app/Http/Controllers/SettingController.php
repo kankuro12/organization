@@ -83,7 +83,11 @@ class SettingController extends Controller
             return view('back.setting.contact',compact('data'));
         }else{
             $oldData=getSetting('contact');
-
+            $data=[
+                'map'=>$request->map??""
+            ];
+            setSetting('contact',$data);
+            file_put_contents(resource_path('views/front/cache/page/contact.blade.php'),view('back.setting.contact',compact('data'))->render());
         }
     }
 

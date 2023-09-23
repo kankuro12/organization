@@ -1116,6 +1116,52 @@ body {
   max-width: 100%;
 }
 
+#contact-page {
+  color: var(--org-extra);
+}
+#contact-page .map {
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+#contact-page .info {
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 50px;
+}
+#contact-page .info .top-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 1s all;
+}
+#contact-page .info .top-link:not(:last-child) {
+  margin-bottom: 20px;
+}
+#contact-page .info .top-link:hover .top-icon {
+  color: var(--org-white);
+  background-color: var(--org-base);
+}
+#contact-page .info .top-link .top-icon {
+  border-radius: 25px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--org-black);
+  background-color: var(--org-primary);
+  margin-right: 20px;
+}
+#contact-page .info .top-link .top-title {
+  color: var(--org-gray);
+  font-size: 0.8rem;
+}
+#contact-page .info .top-link .top-info {
+  color: var(--org-black);
+}
+
 @media (max-width: 768px) {
   .news-single .titleholder {
     position: relative;

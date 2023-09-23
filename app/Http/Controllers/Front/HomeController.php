@@ -69,7 +69,6 @@ class HomeController extends Controller
 
     public function issueSIngle($slug){
         $currentIssue=DB::table('notices')->where('slug',$slug)->first(['title','desc']);
-        $issues= DB::table('notices')->where('type',7)->get(['slug','title','short_desc']);
         return view('front.pages.issuesingle',compact('issues','currentIssue'));
     }
 
@@ -81,5 +80,9 @@ class HomeController extends Controller
         $about=DB::table('notices')->where('slug',$slug)->first(['title','file','short_desc','desc']);
         return view('front.pages.aboutsingle',compact('about'));
 
+    }
+
+    public function contact(){
+        return view('front.pages.contact');
     }
 }

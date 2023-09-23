@@ -69,7 +69,7 @@
             <a href="{{route('issues')}}" class="link">Issues</a>
             <a href="{{route('gallery')}}" class="link">Gallery</a>
             <a href="{{route('faq')}}" class="link">Help</a>
-            <a href="" class="link">Contact</a>
+            <a href="{{route('contact')}}" class="link">Contact</a>
             @if (config('app.has_donation'))
             <a href="#" id="donate" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Donate Now
@@ -133,7 +133,7 @@
             <a href="{{route('issues')}}" class="link">Issues</a>
             <a href="{{route('gallery')}}" class="link">Gallery</a>
             <a href="{{route('faq')}}" class="link">Help</a>
-            <a href="" class="link">Contact</a>
+            <a href="{{route('contact')}}" class="link">Contact</a>
             @if (config('app.has_donation'))
             <a  data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="document.getElementById('sidebar').classList.remove('active');">
                 Donate Now
