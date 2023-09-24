@@ -69,7 +69,7 @@ class HomeController extends Controller
 
     public function issueSIngle($slug){
         $currentIssue=DB::table('notices')->where('slug',$slug)->first(['title','desc']);
-        return view('front.pages.issuesingle',compact('issues','currentIssue'));
+        return view('front.pages.issuesingle',compact('issues'));
     }
 
     public function about(){
