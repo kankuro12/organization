@@ -87,7 +87,7 @@ class SettingController extends Controller
                 'map'=>$request->map??""
             ];
             setSetting('contact',$data);
-            file_put_contents(resource_path('views/front/cache/page/contact.blade.php'),view('back.setting.contact',compact('data'))->render());
+            file_put_contents(resource_path('views/front/cache/page/contact.blade.php'),view('back.setting.template.contact',compact('data'))->render());
         }
     }
 
