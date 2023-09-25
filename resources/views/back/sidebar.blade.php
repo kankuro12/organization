@@ -32,6 +32,10 @@
     <a class="link ps-1" href="{{route('admin.setting.fb')}}">FB Page Setting</a>
     <hr class="my-1">
     <a class="link ps-1" href="{{route('admin.setting.contact')}}">Contact Setting</a>
+    <hr class="my-1">
+    <a class="link ps-1" href="{{route('admin.setting.password')}}">Change Password</a>
+    <hr class="my-1">
+    <a class="link ps-1" href="{{route('logout')}}" onclick="return confirm('Do you want to logout?')">Logout</a>
     {{-- <hr class="my-1"> --}}
 
 </div>

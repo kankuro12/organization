@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class SettingController extends Controller
 {
@@ -91,5 +93,26 @@ class SettingController extends Controller
         }
     }
 
+    public function password(Request $request){
+        if(isGet()){
+            return view('back.setting.password');
+
+        }else{
+            $request->validate([
+                'current_password' => 'required',
+                'new_password' => 'required|string|min:4|confirmed',
+            ]);
+
+            $user = Auth::user();
+
+            if (Hash::check($request->current_password, $user->password)) {
+                $user->password = Hash::make($request->new_password);
+                $user->save();
+                return redirect()->route('admin.index')->with('message', 'Password changed successfully');
+            }
+
+            return back()->with('error' ,'The current password is incorrect');
+        }
+    }
 
 }

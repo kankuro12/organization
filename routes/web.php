@@ -6,6 +6,7 @@ use App\Http\Controllers\Back\NoticeController;
 use App\Http\Controllers\Back\SliderController;
 use App\Http\Controllers\Back\TeamController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,7 +38,10 @@ Route::get('/issues/{slug}', [HomeController::class,'issueSingle'])->name('issue
 Route::get('/about/{slug}', [HomeController::class,'aboutSingle'])->name('about.single');
 
 
-Route::prefix('admin')->name('admin.')->group(function(){
+Route::match(['GET','POST'],'login',[LoginController::class,'login'])->name('login');
+Route::match(['GET','POST'],'logout',[LoginController::class,'logout'])->name('logout');
+
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
 
     Route::get('',[DashboardController::class,'index'])->name('index');
     Route::prefix('slider')->name('slider.')->group(function(){
@@ -77,6 +81,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::match(['GET','POST'],'donation',[SettingController::class,'donation'])->name('donation');
         Route::match(['GET','POST'],'fb',[SettingController::class,'fb'])->name('fb');
         Route::match(['GET','POST'],'contact',[SettingController::class,'contact'])->name('contact');
+        Route::match(['GET','POST'],'password',[SettingController::class,'password'])->name('password');
     });
 
 
