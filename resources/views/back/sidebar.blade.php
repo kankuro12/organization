@@ -31,6 +31,8 @@
     <hr class="my-1">
     <a class="link ps-1" href="{{route('admin.setting.fb')}}">FB Page Setting</a>
     <hr class="my-1">
+    <a class="link ps-1" href="{{route('admin.setting.meta')}}">Sharing Setting</a>
+    <hr class="my-1">
     <a class="link ps-1" href="{{route('admin.setting.contact')}}">Contact Setting</a>
     <hr class="my-1">
     <a class="link ps-1" href="{{route('admin.setting.password')}}">Change Password</a>

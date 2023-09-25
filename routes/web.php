@@ -81,6 +81,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
         Route::match(['GET','POST'],'donation',[SettingController::class,'donation'])->name('donation');
         Route::match(['GET','POST'],'fb',[SettingController::class,'fb'])->name('fb');
         Route::match(['GET','POST'],'contact',[SettingController::class,'contact'])->name('contact');
+        Route::match(['GET','POST'],'meta',[SettingController::class,'meta'])->name('meta');
         Route::match(['GET','POST'],'password',[SettingController::class,'password'])->name('password');
     });
 

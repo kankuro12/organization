@@ -93,6 +93,29 @@ class SettingController extends Controller
         }
     }
 
+
+    public function meta(Request $request){
+        if(isGet()){
+            $data=getSetting('meta');
+            return view('back.setting.meta',compact('data'));
+        }else{
+            $oldData=getSetting('meta');
+            $data=[
+                'title'=>$request->title??"",
+                'description'=>$request->description??""
+            ];
+            if($request->hasFile('feature_image')){
+                $data['feature_image']=$request->feature_image->store('uploads/donation');
+            }else{
+                $data['feature_image']=$oldData->feature_image;
+            }
+            setSetting('meta',$data);
+            file_put_contents(resource_path('views/front/cache/page/meta.blade.php'),view('back.setting.template.meta',compact('data'))->render());
+            file_put_contents(resource_path('views/front/cache/home/meta.blade.php'),view('back.setting.template.meta',compact('data'))->render());
+            return redirect()->back();
+        }
+    }
+
     public function password(Request $request){
         if(isGet()){
             return view('back.setting.password');
