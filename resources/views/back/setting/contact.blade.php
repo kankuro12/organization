@@ -30,7 +30,7 @@
                 <button class="btn btn-primary" onclick="save()"> Save Setting</button>
             </div>
         </div>
-        <hr>
+        {{-- <hr>
         <h5>
             Contact Personals
         </h5>
@@ -53,7 +53,7 @@
                     <input type="text"  id="email" id="email" class="form-control">
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection
 @section('js')
