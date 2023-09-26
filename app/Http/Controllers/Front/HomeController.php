@@ -37,11 +37,9 @@ class HomeController extends Controller
     }
 
     public function gallerySingle($slug){
-        $gallery=DB::table('notices')->where('slug',$slug)->first(['id','title']);
-        $images=getGallery($gallery->id);
-        return view('front.pages.gallerysingle',compact('gallery','images'));
-        // return view('front.gall')
 
+        $gallery=getSingleGallery($slug);
+        return view('front.pages.gallerysingle',compact('gallery'));
     }
 
     public function faq() {

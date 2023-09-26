@@ -17,10 +17,13 @@ class GalleryController extends Controller
 
     public function del(Request $request){
         $gallery=Gallery::where('id',$request->id)->first();
+        $notice_id=$gallery->notice_id;
         unlink(public_path($gallery->file));
         unlink(public_path($gallery->thumb));
         $gallery->delete();
-        delGallery($request->notice_id);
+
+        $n=DB::table('notices')->where('id',$notice_id)->first(['slug']);
+        delSingleGallery($n->slug,$gallery->notice_id);
     }
 
     public function add(Request $request,$notice){
@@ -36,8 +39,8 @@ class GalleryController extends Controller
             $galleries[]=$gallery;
         }
 
-        delGallery($notice);
-
+        $n=DB::table('notices')->where('id',$notice)->first(['slug']);
+        delSingleGallery($n->slug,$notice);
         return response()->json($galleries);
     }
 }

@@ -17,7 +17,7 @@
     <div class="py-5" id="gallery-single-page">
         <div class="container">
             <div class="row m-0">
-                @foreach ($images as $image)
+                @foreach ($gallery->images as $image)
                     <div class="col-md-2 col-6 p-1">
                         <div class="image">
                             <img  loading="lazy"  src="{{vasset($image->thumb)}}" loading="lazy" alt="" href="{{vasset($image->file)}}" data-fancybox="gallery" data-caption="image">

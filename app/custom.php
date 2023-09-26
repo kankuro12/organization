@@ -123,6 +123,21 @@ function delMember($notice_id){
 
 }
 
+
+function getSingleGallery($slug){
+    return Cache::rememberForever($slug,function()use($slug){
+        $gallery=DB::table('notices')->where('slug',$slug)->first(['id','title']);
+        $gallery->images=getGallery($gallery->id);
+        return $gallery;
+    });
+}
+function delSingleGallery($slug,$id){
+    Cache::forget($slug);
+    delGallery($id);
+}
+
+
+
 function createThumbnail($sourceFilePath, $destinationDirectory, $maxWidth = 150, $maxHeight = 150)
 {
     if (!file_exists($sourceFilePath)) {
@@ -194,6 +209,7 @@ function createThumbnail($sourceFilePath, $destinationDirectory, $maxWidth = 150
 
     return $retpath;
 }
+
 
 
 function casset($path){

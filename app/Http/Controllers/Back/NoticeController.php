@@ -75,6 +75,9 @@ class NoticeController extends Controller
             file_put_contents(resource_path('views/front/cache/home/news.blade.php'),view('back.notice.template.news',compact('allnews'))->render());
         }elseif($type==5){
             $galleries=DB::table('notices')->where('type',$type)->orderBy('created_at','desc')->get();
+            foreach ($galleries as $key => $gallery) {
+                delSingleGallery($gallery->slug,$gallery->id);
+            }
             file_put_contents(resource_path('views/front/cache/home/galleries.blade.php'),view('back.notice.template.homegalleries',compact('galleries'))->render());
             file_put_contents(resource_path('views/front/cache/page/galleries.blade.php'),view('back.notice.template.galleries',compact('galleries'))->render());
         }elseif($type==6){
