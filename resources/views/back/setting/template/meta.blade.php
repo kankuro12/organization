@@ -10,3 +10,7 @@
 <meta name="twitter:description" content="{{ $data['description'] }}">
 <meta name="twitter:image" content="{{ vasset($data['feature_image']) }}">
 <meta name="twitter:url" content="{{ url('') }}">
+
+<meta name="description" content="{{ $data['description'] }}">
+<meta name="author" content="{{ config('app.name') }}">
+
