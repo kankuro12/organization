@@ -186,6 +186,22 @@
 
     border-bottom: 1px solid #e8e8e8;
 }
+
+@media(max-width:1300px){
+    .navbar{
+        display: block !important;
+        .logo{
+            margin: 0px;
+            text-align: center;
+        }
+        .navbar-top{
+            justify-content: center;
+        }
+        .navbar-bottom{
+            border-top-left-radius: 0px;
+        }
+    }
+}
 @media(max-width:768px){
     .navbar{
         display: none !important;

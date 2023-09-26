@@ -208,6 +208,21 @@ body {
   font-size: 1rem;
 }
 
+@media (max-width: 1300px) {
+  .navbar {
+    display: block !important;
+  }
+  .navbar .logo {
+    margin: 0px;
+    text-align: center;
+  }
+  .navbar .navbar-top {
+    justify-content: center;
+  }
+  .navbar .navbar-bottom {
+    border-top-left-radius: 0px;
+  }
+}
 @media (max-width: 768px) {
   .navbar {
     display: none !important;
