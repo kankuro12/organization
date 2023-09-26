@@ -22,7 +22,7 @@
                         <div class="col-md-3 col-6 mb-3">
                             <div class="single-member">
                                 <div class="image">
-                                    <img src="{{ asset($member->image) }}" alt="">
+                                    <img  loading="lazy"  src="{{ asset($member->image) }}" alt="">
                                 </div>
                                 <div class="desc">
                                     <div class="name">

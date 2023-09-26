@@ -22,7 +22,7 @@
                 {{$slider->title}}
             </td>
             <td>
-                <img src="{{vasset($slider->image)}}" style="height:100px" alt="slider image">
+                <img  loading="lazy"  src="{{vasset($slider->image)}}" style="height:100px" alt="slider image">
             </td>
             <td>
                 <a href="{{route('admin.slider.edit',['slider'=>$slider->id])}}" class="btn btn-primary">Edit</a>

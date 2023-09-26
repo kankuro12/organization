@@ -25,7 +25,7 @@
                 <div class="col-md-3">
                     <div class="image shadow">
 
-                        <img src="{{vasset($about->file)}}" class="w-100" alt="">
+                        <img  loading="lazy"  src="{{vasset($about->file)}}" class="w-100" alt="">
 
                     </div>
                 </div>

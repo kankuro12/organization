@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-3">
                 @if (isset($generalSetting->footer_logo))
-                    <img id="footerimg" src="{{ vasset($generalSetting->footer_logo) }}" alt="">
+                    <img  loading="lazy"  id="footerimg" src="{{ vasset($generalSetting->footer_logo) }}" alt="">
                 @endif
                 @if (isset($generalSetting->phone))
                 <div class="footeraddr mb-2 mt-2">

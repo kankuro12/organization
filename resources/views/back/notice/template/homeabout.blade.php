@@ -1,6 +1,6 @@
 <div id="home-about">
     <div class="image">
-        <img src="{{vasset($about->file)}}" alt="" srcset="">
+        <img  loading="lazy"  src="{{vasset($about->file)}}" alt="" srcset="">
     </div>
     <div class="home-text">
         <div class="subtitle">

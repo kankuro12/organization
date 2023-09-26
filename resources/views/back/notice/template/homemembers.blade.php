@@ -7,7 +7,7 @@
             <div class="col-6">
                 <div class="member text-center">
                     <div class="member-image">
-                        <img src="{{vasset($team->image)}}"
+                        <img  loading="lazy"  src="{{vasset($team->image)}}"
                             alt="">
                     </div>
                     <div class="name">{{ $team->name }}</div>

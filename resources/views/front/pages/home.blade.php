@@ -37,7 +37,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="qr-holder">
-                                <img src="{{vasset($donationSetting->qr)}}" alt="">
+                                <img  loading="lazy"  src="{{vasset($donationSetting->qr)}}" alt="">
                             </div>
                         </div>
                         <div class="col-md-4">

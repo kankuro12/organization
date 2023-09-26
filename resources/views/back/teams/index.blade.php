@@ -32,7 +32,7 @@
         @foreach ($members as $member)
         <tr>
             <td>
-                <img src="{{vasset($member->image)}}" style="height:50px" alt="slider image">
+                <img  loading="lazy"  src="{{vasset($member->image)}}" style="height:50px" alt="slider image">
             </td>
             <td>
                 {{$member->name}}

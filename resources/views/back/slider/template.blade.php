@@ -5,8 +5,8 @@
 
                 <div class="carousel-item {{$key==0?'active':''}}" data-bs-interval="10000">
                     <div class="slider-item">
-                        <img src="{{vasset($slider->mobile_image)}}" class="d-block d-md-none" alt="">
-                        <img src="{{vasset($slider->image)}}" class="d-md-block d-none" alt="">
+                        <img  loading="lazy"  src="{{vasset($slider->mobile_image)}}" class="d-block d-md-none" alt="">
+                        <img  loading="lazy"  src="{{vasset($slider->image)}}" class="d-md-block d-none" alt="">
                         <div class="slider-info">
                             <div class="title">{{$slider->title}}</div>
                             <div class="subtitle">{{$slider->subtitle}}</div>

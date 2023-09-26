@@ -7,7 +7,7 @@
                 <div class="single-about">
 
                     <div class="image">
-                        <img src="{{vasset($singleabout->file)}}" alt="">
+                        <img  loading="lazy"  src="{{vasset($singleabout->file)}}" alt="">
                     </div>
                     <div class="text">
                         <div class="title">

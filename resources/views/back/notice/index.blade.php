@@ -32,7 +32,7 @@
                     </td>
                     @if ($type==2 || $type==5)
                     <td>
-                        <img style="max-height: 50px;" src="{{asset($notice->file)}}" alt="">
+                        <img  loading="lazy"  style="max-height: 50px;" src="{{asset($notice->file)}}" alt="">
                     </td>
                     @endif
                     <td>

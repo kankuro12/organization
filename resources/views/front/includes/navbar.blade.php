@@ -4,7 +4,7 @@
 <div class="navbar">
     <div class="logo">
         <a href="/">
-            <img src="{{ vasset($generalSetting->header_logo ?? '') }}" alt="Logo">
+            <img  loading="lazy"  src="{{ vasset($generalSetting->header_logo ?? '') }}" alt="Logo">
         </a>
     </div>
     <div class="pt-3">
@@ -97,7 +97,7 @@
     <div class="d-flex align-items-center justify-content-between">
         <div class="logo">
             <a href="/">
-                <img src="{{ vasset($generalSetting->header_logo ?? '') }}" alt="Logo">
+                <img  loading="lazy"  src="{{ vasset($generalSetting->header_logo ?? '') }}" alt="Logo">
             </a>
         </div>
         <div class="toogle-btn" onclick="document.getElementById('sidebar').classList.add('active');">

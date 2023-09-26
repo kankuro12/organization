@@ -3,7 +3,7 @@ var id = 0;
 function render(data) {
     $('#images').append(` <div class="col-md-2" id="image_${data.id}" >
             <div style="position:relative;">
-                <img class="w-100" src="${data.image}" alt="">
+                <img  loading="lazy"  class="w-100" src="${data.image}" alt="">
                 <button  class="btn btn-danger del" onclick="del(${data.id})">
                     X
                 </button>
@@ -14,7 +14,7 @@ function render(data) {
 function renderSaved(data) {
     $('#galleries').append(` <div class="col-md-2" id="image_saved_${data.id}" >
             <div style="position:relative;">
-                <img class="w-100" src="\\${data.thumb}" alt=""  loading="lazy">
+                <img  loading="lazy"  class="w-100" src="\\${data.thumb}" alt=""  loading="lazy">
                 <button  class="btn btn-danger del" onclick="delSaved(${data.id})">
                     X
                 </button>
