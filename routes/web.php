@@ -34,11 +34,11 @@ Route::redirect('/','/home');
     Route::get('/about', [HomeController::class,'about'])->name('about');
     Route::get('/contact', [HomeController::class,'contact'])->name('contact');
 
-    Route::get('/gallery_{slug}', [HomeController::class,'gallerySingle'])->name('gallery.single');
-    Route::get('/news_{slug}', [HomeController::class,'newsSingle'])->name('news.single');
-    Route::get('/committees_{slug}', [HomeController::class,'committeeSingle'])->name('committee.single');
-    Route::get('/issues_{slug}', [HomeController::class,'issueSingle'])->name('issue.single');
-    Route::get('/about_{slug}', [HomeController::class,'aboutSingle'])->name('about.single');
+    Route::get('/gallery/{slug}', [HomeController::class,'gallerySingle'])->name('gallery.single');
+    Route::get('/news/{slug}', [HomeController::class,'newsSingle'])->name('news.single');
+    Route::get('/committees/{slug}', [HomeController::class,'committeeSingle'])->name('committee.single');
+    Route::get('/issues/{slug}', [HomeController::class,'issueSingle'])->name('issue.single');
+    Route::get('/about/{slug}', [HomeController::class,'aboutSingle'])->name('about.single');
 // });
 
 
