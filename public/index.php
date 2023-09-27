@@ -3,16 +3,6 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
-$requestPath = $_SERVER['REQUEST_URI'];
-if ($requestPath == '/') {
-    $filePath = 'home/index.php';
-    if (file_exists($filePath)) {
-        readfile($filePath);
-        exit;
-    }
-}
-
-
 define('LARAVEL_START', microtime(true));
 /*
 |--------------------------------------------------------------------------
