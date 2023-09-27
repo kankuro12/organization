@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/','/home');
 
-Route::middleware('res')->group(function(){
+// Route::middleware('res')->group(function(){
     Route::get('/home', [HomeController::class,'index'])->name('home');
     Route::get('/news', [HomeController::class,'news'])->name('news');
     Route::get('/notices', [HomeController::class,'notices'])->name('notices');
@@ -39,7 +39,7 @@ Route::middleware('res')->group(function(){
     Route::get('/committees_{slug}', [HomeController::class,'committeeSingle'])->name('committee.single');
     Route::get('/issues_{slug}', [HomeController::class,'issueSingle'])->name('issue.single');
     Route::get('/about_{slug}', [HomeController::class,'aboutSingle'])->name('about.single');
-});
+// });
 
 
 Route::match(['GET','POST'],'login',[LoginController::class,'login'])->name('login');
