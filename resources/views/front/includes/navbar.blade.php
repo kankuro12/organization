@@ -4,7 +4,7 @@
 <div class="navbar">
     <div class="logo">
         <a href="/">
-            <img  loading="lazy"  src="{{ vasset($generalSetting->header_logo ?? '') }}" alt="Logo">
+            <img src="{{ vasset($generalSetting->header_logo ?? '') }}" alt="Logo">
         </a>
     </div>
     <div class="pt-3">

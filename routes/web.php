@@ -21,21 +21,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class,'index'])->name('home');
-Route::get('/news', [HomeController::class,'news'])->name('news');
-Route::get('/notices', [HomeController::class,'notices'])->name('notices');
-Route::get('/gallery', [HomeController::class,'gallery'])->name('gallery');
-Route::get('/faq', [HomeController::class,'faq'])->name('faq');
-Route::get('/committees', [HomeController::class,'committees'])->name('committees');
-Route::get('/issues', [HomeController::class,'issues'])->name('issues');
-Route::get('/about', [HomeController::class,'about'])->name('about');
-Route::get('/contact', [HomeController::class,'contact'])->name('contact');
+Route::redirect('/','/home');
 
-Route::get('/gallery/{slug}', [HomeController::class,'gallerySingle'])->name('gallery.single');
-Route::get('/news/{slug}', [HomeController::class,'newsSingle'])->name('news.single');
-Route::get('/committees/{slug}', [HomeController::class,'committeeSingle'])->name('committee.single');
-Route::get('/issues/{slug}', [HomeController::class,'issueSingle'])->name('issue.single');
-Route::get('/about/{slug}', [HomeController::class,'aboutSingle'])->name('about.single');
+Route::middleware('res')->group(function(){
+    Route::get('/home', [HomeController::class,'index'])->name('home');
+    Route::get('/news', [HomeController::class,'news'])->name('news');
+    Route::get('/notices', [HomeController::class,'notices'])->name('notices');
+    Route::get('/gallery', [HomeController::class,'gallery'])->name('gallery');
+    Route::get('/faq', [HomeController::class,'faq'])->name('faq');
+    Route::get('/committees', [HomeController::class,'committees'])->name('committees');
+    Route::get('/issues', [HomeController::class,'issues'])->name('issues');
+    Route::get('/about', [HomeController::class,'about'])->name('about');
+    Route::get('/contact', [HomeController::class,'contact'])->name('contact');
+
+    Route::get('/gallery_{slug}', [HomeController::class,'gallerySingle'])->name('gallery.single');
+    Route::get('/news_{slug}', [HomeController::class,'newsSingle'])->name('news.single');
+    Route::get('/committees_{slug}', [HomeController::class,'committeeSingle'])->name('committee.single');
+    Route::get('/issues_{slug}', [HomeController::class,'issueSingle'])->name('issue.single');
+    Route::get('/about_{slug}', [HomeController::class,'aboutSingle'])->name('about.single');
+});
 
 
 Route::match(['GET','POST'],'login',[LoginController::class,'login'])->name('login');
