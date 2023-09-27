@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class ClearCache
 {
@@ -16,6 +17,10 @@ class ClearCache
      */
     public function handle(Request $request, Closure $next)
     {
+        if(!isGet()){
+            Artisan::call('cache:clear');
+            Artisan::call('viewcache:clear');
+        }
         return $next($request);
     }
 }

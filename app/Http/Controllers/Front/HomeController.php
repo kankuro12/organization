@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function notices(){
         $notices= DB::table('notices')->where('type',1)
         ->orderBy('id','desc')
-        ->select('title','file','created_at')->paginate(10);
+        ->select('title','file','created_at');
 
         return view('front.pages.notice',compact('notices'));
 

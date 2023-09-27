@@ -3,8 +3,17 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
-define('LARAVEL_START', microtime(true));
+$requestPath = $_SERVER['REQUEST_URI'];
+if ($requestPath == '/') {
+    $filePath = 'home/index.php';
+    if (file_exists($filePath)) {
+        readfile($filePath);
+        exit;
+    }
+}
 
+
+define('LARAVEL_START', microtime(true));
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance

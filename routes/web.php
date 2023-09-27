@@ -45,9 +45,10 @@ Route::middleware('res')->group(function(){
 Route::match(['GET','POST'],'login',[LoginController::class,'login'])->name('login');
 Route::match(['GET','POST'],'logout',[LoginController::class,'logout'])->name('logout');
 
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
+Route::prefix('admin')->name('admin.')->middleware(['auth','clr'])->group(function(){
 
     Route::get('',[DashboardController::class,'index'])->name('index');
+
     Route::prefix('slider')->name('slider.')->group(function(){
         Route::get('',[SliderController::class,'index'])->name('index');
         Route::match(['GET','POST'],'add',[SliderController::class,'add'])->name('add');
