@@ -27,8 +27,11 @@ class ResponseCache
 
     public function terminate(Request $request, Response $response): void
     {
-        $path = public_path($request->path());
-        File::ensureDirectoryExists($path);
-        file_put_contents($path.DIRECTORY_SEPARATOR.'index.php',$response->getContent());
+        $path = public_path('cache');
+        $reqPath=rtrim($request->path(),"/");
+        if($reqPath==''){
+            $reqPath="home";
+        }
+        file_put_contents($path.DIRECTORY_SEPARATOR.(str_replace("/","_",$reqPath)).'.php',$response->getContent());
     }
 }

@@ -20,8 +20,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
+Route::middleware('res')->group(function(){
     Route::get('/', [HomeController::class,'index'])->name('home');
     Route::get('/news', [HomeController::class,'news'])->name('news');
     Route::get('/notices', [HomeController::class,'notices'])->name('notices');
@@ -37,12 +36,13 @@ use Illuminate\Support\Facades\Route;
     Route::get('/committees/{slug}', [HomeController::class,'committeeSingle'])->name('committee.single');
     Route::get('/issues/{slug}', [HomeController::class,'issueSingle'])->name('issue.single');
     Route::get('/about/{slug}', [HomeController::class,'aboutSingle'])->name('about.single');
+});
 
 
 Route::match(['GET','POST'],'login',[LoginController::class,'login'])->name('login');
 Route::match(['GET','POST'],'logout',[LoginController::class,'logout'])->name('logout');
 
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
+Route::prefix('admin')->name('admin.')->middleware(['auth','clr'])->group(function(){
 
     Route::get('',[DashboardController::class,'index'])->name('index');
 
