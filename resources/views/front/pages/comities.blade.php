@@ -30,7 +30,7 @@
                     </h4>
                     <div class="row">
 
-                        @foreach ($members->take(4) as $member)
+                        @foreach ($members->take(6) as $member)
                             <div class="col-md-4 mb-3">
                                 <div class="single-member">
                                     <div class="image">
