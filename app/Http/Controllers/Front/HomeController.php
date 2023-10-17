@@ -50,6 +50,9 @@ class HomeController extends Controller
 
     public function committees(){
         $committees=getComities();
+        if($committees->count()==1){
+            return redirect()->route('committee.single',['slug'=>$committees[0]->slug]);
+        }
         return view('front.pages.comities',compact('committees'));
 
 

@@ -3,27 +3,8 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
-
-$loaded=false;
-$filepath="";
-$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$reqPath=trim($path,"/");
-if($reqPath==''){
-    $reqPath="home";
-}
-if(!str_contains($reqPath,'admin')){
-    $filepath=__DIR__."/cache".DIRECTORY_SEPARATOR.(str_replace("/","_",$reqPath).".php");
-    $loaded=file_exists($filepath);
-}
-
-
-if($loaded){
-    $file_contents = file_get_contents($filepath);
-    header('Content-Type: text/html');
-    echo $file_contents;
-}else{
-    define('LARAVEL_START', microtime(true));
-    /*
+define('LARAVEL_START', microtime(true));
+/*
     |--------------------------------------------------------------------------
     | Check If The Application Is Under Maintenance
     |--------------------------------------------------------------------------
@@ -34,11 +15,11 @@ if($loaded){
     |
     */
 
-    if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
-        require $maintenance;
-    }
+if (file_exists($maintenance = __DIR__ . '/../storage/framework/maintenance.php')) {
+    require $maintenance;
+}
 
-    /*
+/*
     |--------------------------------------------------------------------------
     | Register The Auto Loader
     |--------------------------------------------------------------------------
@@ -49,9 +30,9 @@ if($loaded){
     |
     */
 
-    require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-    /*
+/*
     |--------------------------------------------------------------------------
     | Run The Application
     |--------------------------------------------------------------------------
@@ -62,15 +43,14 @@ if($loaded){
     |
     */
 
-    $app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once __DIR__ . '/../bootstrap/app.php';
 
-    $kernel = $app->make(Kernel::class);
-    $app->bind('path.public', function() {
-        return __DIR__;
-    });
-    $response = $kernel->handle(
-        $request = Request::capture()
-    )->send();
+$kernel = $app->make(Kernel::class);
+$app->bind('path.public', function () {
+    return __DIR__;
+});
+$response = $kernel->handle(
+    $request = Request::capture()
+)->send();
 
-    $kernel->terminate($request, $response);
-}
+$kernel->terminate($request, $response);

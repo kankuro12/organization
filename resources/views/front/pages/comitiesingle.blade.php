@@ -19,7 +19,7 @@
             <div class="container py-5">
                 <div class="row">
                     @foreach ($members as $member)
-                        <div class="col-md-3 col-6 mb-3">
+                        <div class="col-md-4">
                             <div class="single-member">
                                 <div class="image">
                                     <img  loading="lazy"  src="{{ asset($member->image) }}" alt="">
