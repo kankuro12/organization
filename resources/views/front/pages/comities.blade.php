@@ -31,7 +31,7 @@
                     <div class="row">
 
                         @foreach ($members->take(6) as $member)
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-4">
                                 <div class="single-member">
                                     <div class="image">
                                         <img  loading="lazy"  src="{{ asset($member->image) }}" alt="">
