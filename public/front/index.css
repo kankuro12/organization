@@ -240,7 +240,6 @@ body {
 #homecarousel .slider-item {
   display: flex;
   justify-content: center;
-  max-height: 600px;
   overflow: hidden;
   position: relative;
 }

@@ -8,8 +8,8 @@
                         <img src="{{vasset($slider->mobile_image)}}" class="d-block d-md-none" alt="">
                         <img src="{{vasset($slider->image)}}" class="d-md-block d-none" alt="">
                         <div class="slider-info">
-                            <div class="title">{{$slider->title}}</div>
-                            <div class="subtitle">{{$slider->subtitle}}</div>
+                            <div class="title">{!!$slider->title!!}</div>
+                            <div class="subtitle">{!!$slider->subtitle!!}</div>
                             @if ($slider->link!='')
                             <div class="btn-holder">
                                 <a href="{{$slider->link}}" class="slider-button">Discover More</a>

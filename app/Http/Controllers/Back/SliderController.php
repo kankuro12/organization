@@ -18,8 +18,8 @@ class SliderController extends Controller
             return view('back.slider.add');
         }else{
             $slider=new Slider();
-            $slider->title=$request->title;
-            $slider->subtitle=$request->subtitle;
+            $slider->title=$request->title??"";
+            $slider->subtitle=$request->subtitle??"";
             $slider->link=$request->link??'';
             $slider->btntitle=$request->btntitle??'';
             $slider->image=$request->image->store('uploads/slider');
@@ -35,8 +35,8 @@ class SliderController extends Controller
 
             return view('back.slider.edit',compact('slider'));
         }else{
-            $slider->title=$request->title;
-            $slider->subtitle=$request->subtitle;
+            $slider->title=$request->title??"";
+            $slider->subtitle=$request->subtitle??"";
             $slider->link=$request->link??'';
             $slider->btntitle=$request->btntitle??'';
             if($request->hasFile('slider')){
